@@ -1,0 +1,18 @@
+#up-div{
+    position: absolute;
+    left: 44.5%;
+    top: 13%;
+    width: 10%;
+    height: 10%;
+    text-align: center;
+}
+#up-button{
+    margin-top: 20%
+ }
+ .true{
+    visibility: visible;
+}
+
+.false{
+    visibility: hidden;
+}

@@ -1,0 +1,10 @@
+  // Catmull-Rom spline
+  // const splinePoints = [new Vector3(0, 0, 0)]
+  // const scale = 1
+  // const length = 10
+  // for (let i = 0; i < length; i++) {
+  //   splinePoints.push(new Vector3(i * Math.random() * scale, i * Math.random() * scale, i * Math.random() * scale))
+  // }
+  // const myCurve = Curve3.CreateCatmullRomSpline(splinePoints, 20)
+  // console.log(myCurve)
+  // MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)

@@ -1,0 +1,12 @@
+#plant-div {
+    width: 20%;
+}
+
+#plant-image {
+    width: 15%;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}

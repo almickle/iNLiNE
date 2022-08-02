@@ -1,0 +1,10 @@
+* {
+  user-select: none;
+}
+
+#gui {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+

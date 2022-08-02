@@ -1,0 +1,20 @@
+#down-div{
+    position: absolute;
+    left: 44.5%;
+    top: 80%;
+    width: 10%;
+    height: 10%;
+    text-align: center;
+}
+
+#down-button{
+   margin-top: 20%
+}
+
+.true{
+    visibility: visible;
+}
+
+.false{
+    visibility: hidden;
+}
