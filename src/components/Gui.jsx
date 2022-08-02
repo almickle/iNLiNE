@@ -26,22 +26,22 @@ const [GuiElements, setGuiElements] = useState([<WelcomePage onEnter={handleEnte
 
 // event handling
 function handleEnter() {
-    setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LH" onLeft={handleLeftClick}/>, <Right key="RH" onRight={handleRightClick}/>, <Up key="UH" onUp={handleUpClick} />, <Down key="DH" onDown={handleDownClick} />])
+    setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleLeftClick() {
-    setGuiElements([<NFTHub key="NH"/>])
+    setGuiElements([<NFTHub key="NH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 function handleRightClick() {
-    setGuiElements([<ClothingHub key="CH"/>, <Right key="R" />])
+    setGuiElements([<ClothingHub key="CH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleUpClick() {
-    setGuiElements([<UserHub key="USH"/>])
+    setGuiElements([<UserHub key="USH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleDownClick() {
-    setGuiElements([<PlantHub key= "PH"/>])
+    setGuiElements([<PlantHub key= "PH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleLiveShop() {
