@@ -1,7 +1,7 @@
 import React from "react"
 
 // stylesheet import
-import "./style/welcome.css"
+import "./style/hubs/welcome.css"
 
 
 // component function

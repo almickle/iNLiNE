@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import NFTCard from "./NFTCard"
 
 // stylesheet imports
-import "./style/nfthub.css"
+import "./style/hubs/nfthub.css"
 
 
 // component function

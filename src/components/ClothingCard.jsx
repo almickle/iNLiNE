@@ -1,7 +1,7 @@
 import React from "react";
 
 // stylesheet imports
-import "./style/clothingcard.css"
+import "./style/cards/clothingcard.css"
 
 
 // function component

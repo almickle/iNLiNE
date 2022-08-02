@@ -1,4 +1,4 @@
-#plant-hub {
+#home {
     width: 80%;
     height: 80%;
     background-color: white;
@@ -6,9 +6,16 @@
     display: flex;
     flex-wrap: wrap;
     border-radius: 1px;
-    /* border-width: 1px; */
-    /* border-style: solid; */
+    border-width: 1px;
+    border-style: solid;
     left: 10%;
     top: 10%;
     justify-content: center;
+}
+
+#liveshop {
+    position: absolute;
+    height: 6%;
+    top: 47%;
+    font-size: larger;
 }

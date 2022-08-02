@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import ClothingCard from "./ClothingCard";
 
 // stylesheet imports
-import "./style/clothinghub.css"
+import "./style/hubs/clothinghub.css"
 
 
 // component function

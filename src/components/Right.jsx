@@ -1,7 +1,7 @@
 import React , {useState} from "react";
 
 // stylesheet imports
-import "./style/right.css"
+import "./style/buttons/right.css"
 
 
 // component function

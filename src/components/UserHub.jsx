@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import UserCard from "./UserCard";
 
 // stylesheet imports
-import "./style/userhub.css"
+import "./style/hubs/userhub.css"
 
 
 // component function

@@ -1,20 +1,23 @@
-#left-div{
+#up-div {
     position: absolute;
-    left: 14%;
-    top: 43%;
     width: 10%;
     height: 10%;
     text-align: center;
+
+    left: 45%;
+    top: 0%;
+
+    background-color: black;
 }
 
-#left-button{
-   margin-top: 20%
+#up-button {
+    margin-top: 20%
 }
 
-.true{
+.true {
     visibility: visible;
 }
 
-.false{
+.false {
     visibility: hidden;
 }

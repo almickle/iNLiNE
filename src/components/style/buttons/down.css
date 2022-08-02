@@ -1,18 +1,23 @@
-#up-div{
+#down-div{
     position: absolute;
-    left: 44.5%;
-    top: 13%;
     width: 10%;
     height: 10%;
     text-align: center;
+
+    left: 45%;
+    top: 90%;
+
+    background-color: black;
 }
-#up-button{
-    margin-top: 20%
- }
- .true{
+
+#down-button {
+   margin-top: 20%
+}
+
+.true {
     visibility: visible;
 }
 
-.false{
+.false {
     visibility: hidden;
 }

@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 import PlantCard from "./PlantCard"
 
 // stylesheet imports
-import "./style/planthub.css"
+import "./style/hubs/planthub.css"
 
 
 // component function

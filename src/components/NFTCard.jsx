@@ -1,7 +1,7 @@
 import React from "react";
 
 // stylesheet imports
-import "./style/nftcard.css"
+import "./style/cards/nftcard.css"
 
 
 // component function

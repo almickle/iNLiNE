@@ -1,7 +1,7 @@
 import React , {useState}from "react";
 
 // stylesheet imports
-import "./style/down.css"
+import "./style/buttons/down.css"
 
 
 // component function
