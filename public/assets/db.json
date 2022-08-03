@@ -69,8 +69,133 @@
       "price": 2050.00,
       "description": "Mocha Brown Flocked Technical Cotton Denim"
       
-        }
-
+        },
+        {
+          "id": 10,
+    "name": "OVERSIZED CACTUS JACK DIOR T-SHIRT",
+    "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/4/9/1657637114_213J685C0677_C486_E01_ZHC.jpg?imwidth=800",
+    "price": 890.00,
+    "description": "Pink Cotton Jersey"
+      },
+      {
+        "id":11,
+        "name": "CACTUS JACK DIOR BANDANA",
+        "image": "https://media.dior.com/img/en_us/sku/couture/28B1090B0662_C585_TU?imwidth=460",
+        "price": 490.00,
+        "description": "Navy Blue and White Silk"
+      },
+      {
+        "id": 12,
+        "name": "CACTUS JACK DIOR BROOCH",
+        "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/c/J/1658252715_V0892HOMMT_D319_E01_GHC.jpg?imwidth=800",
+        "price": 720.00,
+        "description": "Gold-Finish Brass and White Crystals"
+      },
+      {
+        "id": 13,
+        "name": "CACTUS JACK DIOR PENDANT NECKLACE",
+        "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/Y/F/1658216716_N1639HOMMT_D319_E01_GHC.jpg?imwidth=800",
+        "price": 800.00,
+        "description": "Gold-Finish Brass and White Crystals"
+      },
+      {
+        "id": 14,
+        "name": "B713 CACTUS JACK DIOR SNEAKER - LIMITED AND NUMBERED EDITION",
+        "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/9/t/1656607659_3SN281ZNV_H166_E02_GHC.jpg?imwidth=800",
+        "price": 1450.00,
+        "description": "Cream Grained Calfskin and Technical Mesh with Coffee Nubuck Calfskin"
+      },
+      {
+        "id": 15,
+        "name": "OVERSIZED CACTUS JACK DIOR SLEEVELESS SWEATER",
+        "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/F/c/1656607665_283M654AT357_C185_E01_GHC.jpg?imwidth=800",
+        "price": 2200.00,
+        "description": "Beige and Black Cashmere Jacquard"
+      },
+      {
+        "id": 16,
+        "name": "B713 CACTUS JACK DIOR SNEAKER - LIMITED AND NUMBERED EDITION",
+        "image": "https://media.dior.com/img/en_us/sku/couture/3SN281ZNV_H967_T48?imwidth=460",
+        "price": 1450.00,
+        "description": "Mocha Grained Calfskin and Technical Mesh with Black Nubuck Calfskin"
+      },
+      {
+        "id": 17,
+        "name": "CD DIAMOND S1I",
+        "image": "https://media.dior.com/img/en_us/sku/couture/TRVSS1IXR_10A0_56?imwidth=460",
+        "price": 790.00,
+        "description": "Black Rectangular Sunglasses"
+      },
+      {
+        "id": 18 ,
+        "name": "OVERSIZED CACTUS JACK DIOR SLEEVELESS SWEATER",
+        "image": "https://media.dior.com/img/en_us/sku/couture/283M654AT357_C180_TXXS?imwidth=460",
+        "price": 2200.00,
+        "description": "Beige and Brown Cashmere Jacquard"
+      },
+      {
+        "id": 19,
+        "name": "Loose Pants",
+        "image": "https://media.dior.com/img/en_us/sku/couture/283C102A4739_C989_T52?imwidth=460",
+        "price": 950.00,
+        "description": "Black Wool Till"
+      },
+      {
+        "id": 20,
+        "name": "B23 CACTUS JACK DIOR High-Top Sneaker",
+        "image": "https://media.dior.com/img/en_us/sku/couture/3SH126ZOI_H160_T39?imwidth=460",
+        "price": 1400,
+        "description": "Cream and Coffee Cotton Canvas"
+      },
+      {
+        "id": 21,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 22,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 23,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 24,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 25,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 26,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      },
+      {
+        "id": 27,
+        "name": "",
+        "image": "",
+        "price": 0,
+        "description": ""
+      }
     ],
 
     "nft": [
