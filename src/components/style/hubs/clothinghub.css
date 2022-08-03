@@ -18,7 +18,7 @@
     position: absolute;
     top: -5%;
     left: 2%;
-    color: rgb(45, 45, 45);
+    color: rgb(20, 20, 20);
     letter-spacing: -0.5rem;
 }
 
@@ -45,10 +45,16 @@
     width: fit-content;
     padding-left: 1%;
     padding-right: 1%;
-    top: 15%;
+    border: solid;
+    z-index: 3;
+    top: 7%;
     height: 70%;
     background-color: rgb(244, 245, 245);
     font-size: large;
+}
+
+.nav-button:hover {
+    opacity: 85%;
 }
 
 #collection {

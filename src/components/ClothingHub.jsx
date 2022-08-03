@@ -11,12 +11,37 @@ import "./style/hubs/clothinghub.css"
 function ClothingHub() {
 
     const [clothingItems, setClothingItems] = useState([{id: "1", image: "https://media.dior.com/couture/ecommerce/media/catalog/product/E/I/1592293527_3SH118YJP_H069_E02_ZHC.jpg?imwidth=870"}])
+    const [dropDownVisible, setDropDownVisible] = useState({collection: false, sort: false, filter: false})
 
     useEffect(() => {
       fetch("http://localhost:3000/clothing")
       .then(resp => resp.json())
       .then(data => setClothingItems(data))
     }, [])
+
+    useEffect(() => {
+        for (const key in dropDownVisible) {
+            if(dropDownVisible[key] === true) {
+            const currentDropDown = document.getElementById(key)
+                  currentDropDown.style.height = "400%"
+            } else {
+                document.getElementById(key).style.height = "70%"
+            }
+        }
+
+    }, [dropDownVisible])
+
+    function handleCollectionClick() {
+        setDropDownVisible({collection: true, sort: false, filter: false})
+    }
+
+    function handleSortClick(event) {
+        setDropDownVisible({collection: false, sort: true, filter: false})
+    }
+
+    function handleFilterClick(event) {
+        setDropDownVisible({collection: false, sort: false, filter: true})
+    }
     
 
     const clothingElements = clothingItems.map((clothing) => {   
@@ -32,9 +57,9 @@ function ClothingHub() {
             <h1 id="clothing-main-header">Collection</h1>
             <span id="linebreak-C"></span>
             <div id="nav-bar">
-                <span id="collection" className="nav-button">Collections</span>
-                <span id="sort" className="nav-button">Sort</span>
-                <span id="filter" className="nav-button">Filter</span>
+                <span id="collection" className="nav-button" onClick={handleCollectionClick}>Collections</span>
+                <span id="sort" className="nav-button" onClick={handleSortClick}>Sort</span>
+                <span id="filter" className="nav-button" onClick={handleFilterClick}>Filter</span>
             </div>
             <div id="clothing-items">
                 {clothingElements}
