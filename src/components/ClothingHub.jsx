@@ -29,7 +29,7 @@ function ClothingHub() {
 
     return (
         <div id="clothing-hub">
-            <h1 id="clothing-main-header">Graham's Fashion</h1>
+            <h1 id="clothing-main-header">Collection</h1>
             <span id="linebreak-C"></span>
             <div id="clothing-items">
                 {clothingElements}

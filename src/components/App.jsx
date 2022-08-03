@@ -21,13 +21,13 @@ function App() {
 const [isLoading, setIsLoading] = useState(true)
 const [meshData, setMeshData] = useState([])
 
-useEffect(() => {
-      fetch("https://drive.google.com/drive/u/0/folders/1A3nv-y4ujpjScW5jnvA7yuz2jyUSLthF")
-      .then(resp => resp.json())
-      .then(data => {
-            console.log(meshData)
-            setMeshData(data)})
-}, [])
+// useEffect(() => {
+//       fetch("https://drive.google.com/drive/u/0/folders/1A3nv-y4ujpjScW5jnvA7yuz2jyUSLthF")
+//       .then(resp => resp.json())
+//       .then(data => {
+//             console.log(meshData)
+//             setMeshData(data)})
+// }, [])
   
 // Function: scene config
 const onSceneReady = (scene) => {
@@ -66,9 +66,9 @@ if(isLoading === false) {
         //grid.material = new GridMaterial("gridmaterial", scene)
   
   // Load and position mesh
-  SceneLoader.ImportMesh("", "http://localhost:3000/mesh", "Warehouse.gltf", scene, (mesh) => {
+//   SceneLoader.ImportMesh("", "http://localhost:3000/mesh", "Warehouse.gltf", scene, (mesh) => {
       
-  })
+//   })
 
 };
 
