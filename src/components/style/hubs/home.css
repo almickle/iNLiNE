@@ -5,14 +5,14 @@
 
 #home {
   width: 70%;
-  height: 50%;
+  height: 62%;
   position: absolute;
   background-color: white;
   border-radius: 1px;
   border-width: 1px;
   border-style: solid;
   left: 15%;
-  top: 35%;
+  top: 18%;
   justify-content: center;
   
   animation-name: homeFadeIn;
@@ -38,27 +38,40 @@
   font-size: larger;
 }
 
-/* #home-clipart {
-  z-index: 0;
+#linebreak {
   position: absolute;
-  width: auto;
-  max-height: 80%;
-} */
+  z-index: 0;
 
+  width: 110%;
+  height: 2px;
+  top: 10%;
+  background-color: aquamarine;
+}
+
+#fav-list {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 44%;
+  height: 80%;
+  background-color: aquamarine;
+}
 
 #main-header {
   font-family: "CoreCircus", sans-serif;
-  font-size: 14vw;
+  z-index: 1;
+  font-size: 4vw;
   text-align: center;
   line-height: 1;
   margin: 0;
-  top: 50%;
-  left: 50%;
+  top: 10%;
+  left: 86%;
   transform: translate(-50%, -50%);
   position: absolute;
   color: rgb(45, 45, 45);
   letter-spacing: -0.5rem;
 }
+
 #main-header:before {
   content: attr(data-heading);
   position: absolute;
