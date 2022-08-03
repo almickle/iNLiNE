@@ -14,7 +14,7 @@
     width: 60%;
     height: 76%;
     position: absolute;
-    background-color: rgb(244, 245, 245);
+    background-color: white;
     border-radius: 1px;
     border-width: 1px;
     border-style: solid;
@@ -25,9 +25,9 @@
 #plant-image-div{
  width: 45%;
  height: 75%;
- border-width: 2px;
+ /* border-width: 2px;
  border-style: solid;
- border-radius: 20px;
+ border-radius: 20px; */
  position: absolute
  
 }
@@ -36,4 +36,22 @@
     position: absolute;
     right: 10%;
     top: 5%
+}
+
+#price{
+    position: absolute;
+    right: 10%;
+    top: 15%
+}
+
+#type{
+    position: absolute;
+    right: 10%;
+    top: 25%
+}
+
+#add-to-cart{
+    position: absolute;
+    right: 15%;
+    top: 45%
 }

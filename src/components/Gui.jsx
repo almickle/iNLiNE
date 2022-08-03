@@ -67,19 +67,22 @@ function handleLeftClick() {
     setGuiElements([<NFTHub key="NH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 function handleRightClick() {
-    setGuiElements([<ClothingHub key="CH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<ClothingHub key="CH" handleCardClick={handleCardClick}/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleUpClick() {
-    setGuiElements([<UserHub key="USH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<UserHub key="USH" />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleDownClick() {
     setGuiElements([<PlantHub key= "PH" handleCardClick={handleCardClick} />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
+function handleCardClick(clothing){
+    setGuiElements([<ClothingHub key={clothing.id} clothing={clothing}/>])
+}
 function handleCardClick(plant){
     console.log(plant)
-    setGuiElements([<PlantCard key={plant.id}/>])
+    setGuiElements([<PlantCard key={plant.id} plant={plant}/>])
 }
 function handleLiveShop() {
     setGuiElements()
