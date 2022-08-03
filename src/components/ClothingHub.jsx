@@ -21,13 +21,19 @@ function ClothingHub() {
 
     const clothingElements = clothingItems.map((clothing) => {   
         return(
-            <img key={clothing.id} className="clothing-image" src={clothing.image}></img>
-            )
+            <div key={clothing.id} className="clothing-image-div">
+                <img key={clothing.id} className="clothing-image" src={clothing.image}></img>
+            </div>
+        )
     })
 
     return (
         <div id="clothing-hub">
-            {clothingElements}
+            <h1 id="clothing-main-header">Graham's Fashion</h1>
+            <span id="linebreak-C"></span>
+            <div id="clothing-items">
+                {clothingElements}
+            </div>
         </div>
     )
 }

@@ -24,7 +24,7 @@ function PlantHub() {
             <div key={plant.id} className="plant-image-div">
                 <img key={plant.id} className="plant-image" src={plant.image}></img>
             </div>
-            )
+        )
     })
 
     return (

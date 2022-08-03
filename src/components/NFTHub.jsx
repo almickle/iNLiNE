@@ -21,13 +21,19 @@ function NFTHub() {
 
     const nftElements = nftItems.map((nft) => {   
         return(
-            <NFTCard key={nft.id} image={nft.image} />
+            <div key={nft.id} className="nft-image-div">
+                <img key={nft.id} className="nft-image" src={nft.image}></img>
+            </div>
             )
     })
 
     return (
         <div id="nft-hub">
-            {nftElements}
+            <h1 id="nft-main-header">NFT Store</h1>
+            <span id="linebreak-nft"></span>
+            <div id="nft-items">
+                {nftElements}
+            </div>
         </div>
     )
 }
