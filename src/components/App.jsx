@@ -62,15 +62,12 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
   const binormals = myPath.getBinormals()
   const curvePath = myPath.getCurve()
 
-  //MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)
+//   MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)
 
   // camera definition
   const camera = new UniversalCamera("dollycamera", new Vector3(5, 4, 2), scene);
   camera.attachControl(canvas, true);
   camera.setTarget(new Vector3(0, 0, 0));
-  //camera.fov = Math.PI/2;
-  //camera.minZ = 0.01;
-  //camera.maxZ = 25;
   camera.updateUpVectorFromRotation = true;
 
 
