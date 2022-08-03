@@ -5,9 +5,14 @@ import "./style/cards/plantcard.css"
 
 
 // component function
-function PlantCard({image}){
+function PlantCard(){
     return(
-            <div></div>
+            <div id="plant-card-div">
+                <img id="plant-image-div"></img>
+                <h2 id="name">Name:</h2>
+            </div>
+            
+           
     )
 }
 

@@ -12,6 +12,7 @@ import Down from "./Down"
 import NFTHub from "./NFTHub"
 import ClothingHub from "./ClothingHub"
 import PlantHub from "./PlantHub"
+import PlantCard from "./PlantCard"
 import UserHub from "./UserHub"
 
 // stylesheet imports
@@ -74,9 +75,12 @@ function handleUpClick() {
 }
 
 function handleDownClick() {
-    setGuiElements([<PlantHub key= "PH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<PlantHub key= "PH" handleCardClick={handleCardClick} />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
-
+function handleCardClick(plant){
+    console.log(plant)
+    setGuiElements([<PlantCard key={plant.id}/>])
+}
 function handleLiveShop() {
     setGuiElements()
     const gui = document.getElementById('gui')

@@ -10,3 +10,30 @@
     margin-left: 1%;
     margin-right: 1%;
 }
+#plant-card-div{
+    width: 60%;
+    height: 76%;
+    position: absolute;
+    background-color: rgb(244, 245, 245);
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    left: 20%;
+    top: 10%;
+}
+
+#plant-image-div{
+ width: 45%;
+ height: 75%;
+ border-width: 2px;
+ border-style: solid;
+ border-radius: 20px;
+ position: absolute
+ 
+}
+
+#name{
+    position: absolute;
+    right: 10%;
+    top: 5%
+}
