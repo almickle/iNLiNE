@@ -1,13 +1,19 @@
 #up-div {
     position: absolute;
-    width: 10%;
-    height: 10%;
+    width: 100px;
+    height: 100px;
     text-align: center;
+
+    border-radius: 50px;
+    line-height: 100px;
 
     left: 45%;
     top: 0%;
 
+    cursor: pointer;
+
     background-color: black;
+    color: white;
 }
 
 #up-button {
@@ -21,3 +27,4 @@
 .false {
     visibility: hidden;
 }
+

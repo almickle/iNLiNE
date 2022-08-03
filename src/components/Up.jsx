@@ -1,4 +1,4 @@
-import React , {useState}from "react";
+import React, {useState} from "react";
 
 // stylesheet imports
 import "./style/buttons/up.css"
@@ -18,10 +18,8 @@ function Up({ onUp }){
     }
 
     return(
-        <div id="up-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
-             <button onClick={onUp} id="up-button" className={visibility.toString()} >
-                Up
-            </button>   
+        <div id="up-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>  
+            <span id="up-div" onClick={onUp} className={visibility.toString()}></span>
         </div>
     )
 
