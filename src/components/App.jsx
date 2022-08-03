@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // Babylon imports
 import { FreeCamera, Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3 } from "@babylonjs/core";
@@ -18,19 +18,27 @@ import "./style/canvas.css";
 // App Component
 function App() {
 
-const [isIntro, setIsIntro] = useState(true)
+const [isLoading, setIsLoading] = useState(true)
+const [meshData, setMeshData] = useState([])
 
+useEffect(() => {
+      fetch("https://drive.google.com/drive/u/0/folders/1A3nv-y4ujpjScW5jnvA7yuz2jyUSLthF")
+      .then(resp => resp.json())
+      .then(data => {
+            console.log(meshData)
+            setMeshData(data)})
+}, [])
   
 // Function: scene config
 const onSceneReady = (scene) => {
 
   scene.clearColor = new Color3(1, 1, 1)
-  const skyMaterial = new SkyMaterial("skyMat", scene)
+
+if(isLoading === false) {
+      const skyMaterial = new SkyMaterial("skyMat", scene)
         skyMaterial.backFaceCulling = false
         skyMaterial.inclination = 0.1
         skyMaterial.azimuth = 0.5
-
-if(isIntro === false) {
   const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
         skyBox.material = skyMaterial
 }
@@ -57,10 +65,10 @@ if(isIntro === false) {
   const grid = MeshBuilder.CreateGround("grid", {width: 1000, height: 1000})
         //grid.material = new GridMaterial("gridmaterial", scene)
   
-//   // Load and position mesh
-//   SceneLoader.ImportMesh("", "./assets/", "Warehouse.gltf", scene, (mesh) => {
+  // Load and position mesh
+  SceneLoader.ImportMesh("", "http://localhost:3000/mesh", "Warehouse.gltf", scene, (mesh) => {
       
-//   })
+  })
 
 };
 
