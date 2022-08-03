@@ -21,13 +21,19 @@ function PlantHub() {
 
     const plantElements = plantItems.map((plant) => {   
         return(
-            <PlantCard key={plant.id} image={plant.image} />
+            <div key={plant.id} className="plant-image-div">
+                <img key={plant.id} className="plant-image" src={plant.image}></img>
+            </div>
             )
     })
 
     return (
         <div id="plant-hub">
-            {plantElements}
+            <h1 id="plant-main-header">Planta Planta</h1>
+            <span id="linebreak-P"></span>
+            <div id="plant-items">
+                {plantElements}
+            </div>
         </div>
     )
 }

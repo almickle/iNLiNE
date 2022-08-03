@@ -21,7 +21,7 @@ function ClothingHub() {
 
     const clothingElements = clothingItems.map((clothing) => {   
         return(
-            <ClothingCard key={clothing.id} image={clothing.image} />
+            <img key={clothing.id} className="clothing-image" src={clothing.image}></img>
             )
     })
 

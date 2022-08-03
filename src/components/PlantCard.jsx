@@ -7,7 +7,7 @@ import "./style/cards/plantcard.css"
 // component function
 function PlantCard({image}){
     return(
-            <img id="plant-image" src={image}></img>
+            <div></div>
     )
 }
 
