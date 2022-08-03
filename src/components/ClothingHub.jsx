@@ -31,7 +31,11 @@ function ClothingHub() {
         <div id="clothing-hub">
             <h1 id="clothing-main-header">Collection</h1>
             <span id="linebreak-C"></span>
-            <span id="nav-bar"></span>
+            <div id="nav-bar">
+                <span id="collection" className="nav-button">Collections</span>
+                <span id="sort" className="nav-button">Sort</span>
+                <span id="filter" className="nav-button">Filter</span>
+            </div>
             <div id="clothing-items">
                 {clothingElements}
             </div>
