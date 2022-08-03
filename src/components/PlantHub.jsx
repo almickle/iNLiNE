@@ -8,7 +8,7 @@ import "./style/hubs/planthub.css"
 
 
 // component function
-function PlantHub() {
+function PlantHub({handleCardClick}) {
 
     const [plantItems, setPlantItems] = useState([])
 
@@ -18,11 +18,12 @@ function PlantHub() {
       .then(data => setPlantItems(data))
     }, [])
     
+    
 
     const plantElements = plantItems.map((plant) => {   
         return(
             <div key={plant.id} className="plant-image-div">
-                <img key={plant.id} className="plant-image" src={plant.image}></img>
+                <img key={plant.id} className="plant-image" src={plant.image} onClick={()=>handleCardClick(plant)}></img>
             </div>
         )
     })

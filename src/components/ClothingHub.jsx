@@ -1,17 +1,21 @@
 import React, {useState, useEffect} from "react";
 
 // component imports
-import ClothingCard from "./ClothingCard";
+// import ClothingCard from "./ClothingCard";
 
 // stylesheet imports
 import "./style/hubs/clothinghub.css"
 
 
 // component function
-function ClothingHub() {
+function ClothingHub({handleCardClick}) {
 
+<<<<<<< HEAD
     const [clothingItems, setClothingItems] = useState([{id: "1", image: "https://media.dior.com/couture/ecommerce/media/catalog/product/E/I/1592293527_3SH118YJP_H069_E02_ZHC.jpg?imwidth=870"}])
     const [dropDownVisible, setDropDownVisible] = useState({collection: false, sort: false, filter: false})
+=======
+    const [clothingItems, setClothingItems] = useState([])
+>>>>>>> 9fa744e1767e87d449c984cf70f9ade50116eccc
 
     useEffect(() => {
       fetch("http://localhost:3000/clothing")
@@ -47,7 +51,7 @@ function ClothingHub() {
     const clothingElements = clothingItems.map((clothing) => {   
         return(
             <div key={clothing.id} className="clothing-image-div">
-                <img key={clothing.id} className="clothing-image" src={clothing.image}></img>
+                <img key={clothing.id} className="clothing-image" src={clothing.image} onClick={()=>handleCardClick(clothing)}></img>
             </div>
         )
     })
