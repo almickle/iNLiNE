@@ -26,18 +26,35 @@ const [GuiElements, setGuiElements] = useState([<Intro onEnter={handleEnter} key
 
 // event handling
 function handleEnter() {
+
     const welcome = document.getElementById("welcome")
+    const wordart = document.getElementById("intro-text")
+    const spanLeft = document.getElementById("span-left")
+    const spanRight = document.getElementById("span-right")
+
         welcome.animate([
             {transform: 'translateX(0px)'},
             {transform: 'translateX(-3500px)'}
 
         ], { duration: 1100 })
-    const wordart = document.getElementById("intro-text")
         wordart.animate([
             {transform: 'translateX(0px)'},
             {transform: 'translateX(-3500px)'}
 
         ], { duration: 1100 })
+
+        setTimeout(() => {
+            spanLeft.animate([
+                {transform: 'translateX(0px)'},
+                {transform: 'translateX(-2000px)'}
+    
+            ], { duration: 800 })
+            spanRight.animate([
+                {transform: 'translateX(0px)'},
+                {transform: 'translateX(2000px)'}
+    
+            ], { duration: 800 })
+        }, 350)
 
     setTimeout(() => {
         setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
