@@ -19,9 +19,9 @@ function Left({ onLeft }){
 
     return(
         <div id="left-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
-             <button onClick={onLeft} id="left-button" className={visibility.toString()} >
-                Left
-            </button>   
+            <div id="left-button" onClick={onLeft}>
+                <div id="left-arrow"></div>
+            </div>
         </div>
     )
 

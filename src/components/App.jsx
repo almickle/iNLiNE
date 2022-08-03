@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Babylon imports
 import { FreeCamera, Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3 } from "@babylonjs/core";
@@ -7,7 +7,6 @@ import { SkyMaterial } from "@babylonjs/materials";
 import "@babylonjs/core";
 import "@babylonjs/loaders"
 import "@babylonjs/materials"
-import "@babylonjs/gui"
 
 // component imports
 import Gui from "./Gui";
@@ -19,6 +18,8 @@ import "./style/canvas.css";
 // App Component
 function App() {
 
+const [isIntro, setIsIntro] = useState(true)
+
   
 // Function: scene config
 const onSceneReady = (scene) => {
@@ -29,8 +30,10 @@ const onSceneReady = (scene) => {
         skyMaterial.inclination = 0.1
         skyMaterial.azimuth = 0.5
 
+if(isIntro === false) {
   const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
         skyBox.material = skyMaterial
+}
 
   // Gets reference to the canvas 
   const canvas = scene.getEngine().getRenderingCanvas();
@@ -51,8 +54,8 @@ const onSceneReady = (scene) => {
         axes.dispose()
 
   // Create grid
-//   const grid = MeshBuilder.CreateGround("grid", {width: 1000, height: 1000})
-//         grid.material = new GridMaterial("gridmaterial", scene)
+  const grid = MeshBuilder.CreateGround("grid", {width: 1000, height: 1000})
+        //grid.material = new GridMaterial("gridmaterial", scene)
   
 //   // Load and position mesh
 //   SceneLoader.ImportMesh("", "./assets/", "Warehouse.gltf", scene, (mesh) => {

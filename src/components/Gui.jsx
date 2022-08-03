@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // component imports
-import WelcomePage from "./WelcomePage"
+import Intro from "./Intro"
 import HomeHub from "./HomeHub"
 
 import Left from "./Left"
@@ -21,12 +21,28 @@ import "./style/gui.css"
 // component function
 export default () => {
 
-const [GuiElements, setGuiElements] = useState([<WelcomePage onEnter={handleEnter} key="WP" />])
+const [GuiElements, setGuiElements] = useState([<Intro onEnter={handleEnter} key="WP" />])
 
 
 // event handling
 function handleEnter() {
-    setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    const welcome = document.getElementById("welcome")
+        welcome.animate([
+            {transform: 'translateX(0px)'},
+            {transform: 'translateX(-3500px)'}
+
+        ], { duration: 1100 })
+    const wordart = document.getElementById("intro-text")
+        wordart.animate([
+            {transform: 'translateX(0px)'},
+            {transform: 'translateX(-3500px)'}
+
+        ], { duration: 1100 })
+
+    setTimeout(() => {
+        setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    }, 1100)
+
 }
 
 function handleLeftClick() {

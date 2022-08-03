@@ -1,23 +1,48 @@
-#left-div{
+#left-div {
     position: absolute;
-    width: 10%;
-    height: 10%;
-    text-align: center;
+    width: 100px;
+    height: 100px;
 
-    top: 45%;
-    left: 0%;
+    left: 4%;
+    top: 46%;
 
-    background-color: black;
+    transform: rotateZ(270deg);
 }
 
-#left-button{
-   margin-top: 20%
+#left-button {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+
+    cursor: pointer;
+} 
+
+#left-button:hover {
+    background-color: white;
+    opacity: 30%;
 }
 
-.true{
+#left-arrow {
+    position: absolute;
+    left: 35px;
+    top: 43px;
+    width: 30px;
+    height: 30px;
+    transform: rotateZ(-135deg);
+    border-style: solid;
+    border-left: 2px;
+    border-top: 2px;
+}
+
+
+.true {
     visibility: visible;
 }
 
-.false{
+.false {
     visibility: hidden;
 }
+

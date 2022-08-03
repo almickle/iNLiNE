@@ -19,9 +19,9 @@ function Right({ onRight }){
 
     return(
         <div id="right-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
-             <button onClick={onRight} id="right-button" className={visibility.toString()} >
-                Right
-            </button>   
+            <div id="right-button" onClick={onRight}>
+                <div id="right-arrow"></div>
+            </div>
         </div>
     )
 

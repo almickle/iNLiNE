@@ -19,9 +19,9 @@ function Down({ onDown }){
 
     return(
         <div id="down-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
-             <button onClick={onDown} id="down-button" className={visibility.toString()} >
-                Down
-            </button>   
+            <div id="down-button" onClick={onDown}>
+                <div id="down-arrow"></div>
+            </div>
         </div>
     )
 
