@@ -11,7 +11,7 @@ import "./style/modelviewer.css"
 import "@babylonjs/core";
 import "@babylonjs/loaders"
 import "@babylonjs/materials"
-import { ArcRotateCamera, Color3, FreeCamera, HemisphericLight, SceneLoader, TargetCamera, Vector3 } from "@babylonjs/core";
+import { ArcRotateCamera, Color3, HemisphericLight, SceneLoader, Vector3 } from "@babylonjs/core";
 
 
 // component function
@@ -31,15 +31,18 @@ export default ({onLiveShop}) => {
     })
 
     const onSceneReady = (scene) => {
+
+        scene.clearColor = new Color3(1, 1, 1)
+
         const canvas = scene.getEngine().getRenderingCanvas();
         const camera = new ArcRotateCamera("modelcamera", 1, 0, 10, new Vector3(0, 0, 0), scene);
               camera.panningAxis = new Vector3(1, 0, 0)
               camera.attachControl(canvas, true);
-  const light = new HemisphericLight("light", new Vector3(0, 100, 30), scene);
-        light.intensity = 0.7;
-        scene.clearColor = new Color3(1, 1, 1)
 
-          SceneLoader.ImportMesh("", "./assets/", "Simple_Man_BLEND.gltf", scene, (mesh) => {
+        const light = new HemisphericLight("modellight", new Vector3(0, 100, 30), scene);
+              light.intensity = 0.7;
+
+          SceneLoader.ImportMesh("", "./assets/", "CharacterModel.gltf", scene, (mesh) => {
       
         })
     }

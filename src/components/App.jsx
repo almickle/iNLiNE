@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Babylon imports
-import { FreeCamera, Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3 } from "@babylonjs/core";
+import { FreeCamera, Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3, Curve3, Path3D, UniversalCamera, Quaternion, Animation, Mesh } from "@babylonjs/core";
 import SceneComponent from "./SceneComponent";
-import { SkyMaterial } from "@babylonjs/materials";
+import { GridMaterial, SkyMaterial } from "@babylonjs/materials";
 import "@babylonjs/core";
 import "@babylonjs/loaders"
 import "@babylonjs/materials"
@@ -18,57 +18,108 @@ import "./style/canvas.css";
 // App Component
 function App() {
 
-const [isLoading, setIsLoading] = useState(true)
-const [meshData, setMeshData] = useState([])
+const [isLoaded, setIsLoaded] = useState(false)
 
-// useEffect(() => {
-//       fetch("https://drive.google.com/drive/u/0/folders/1A3nv-y4ujpjScW5jnvA7yuz2jyUSLthF")
-//       .then(resp => resp.json())
-//       .then(data => {
-//             console.log(meshData)
-//             setMeshData(data)})
-// }, [])
   
 // Function: scene config
 const onSceneReady = (scene) => {
 
+// Gets reference to the canvas 
+const canvas = scene.getEngine().getRenderingCanvas();
+
+// set background color
   scene.clearColor = new Color3(1, 1, 1)
 
-if(isLoading === false) {
-      const skyMaterial = new SkyMaterial("skyMat", scene)
-        skyMaterial.backFaceCulling = false
-        skyMaterial.inclination = 0.1
-        skyMaterial.azimuth = 0.5
-  const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
-        skyBox.material = skyMaterial
-}
-
-  // Gets reference to the canvas 
-  const canvas = scene.getEngine().getRenderingCanvas();
-
-  // Creates and positions the camera 
-  const camera = new FreeCamera("camera1", new Vector3(0, 2, 0), scene);
-        // Attaches the camera to the canvas
-        camera.attachControl(canvas, true);
-        // Points the camera towards the scene origin
-        camera.setTarget(new Vector3(-10, 2, -5));
+const skyMaterial = new SkyMaterial("skyMat", scene)
+      skyMaterial.backFaceCulling = false
+      skyMaterial.inclination = 0.1
+      skyMaterial.azimuth = 0.5
+const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
+      skyBox.material = skyMaterial
 
   // Create light and set intensity
   const light = new HemisphericLight("light", new Vector3(0, 100, 30), scene);
         light.intensity = 0.7;
 
-  // Create axes
-  const axes = new AxesViewer(scene, 1000, 2, null, null, null, 0.005)
-        axes.dispose()
-
   // Create grid
   const grid = MeshBuilder.CreateGround("grid", {width: 1000, height: 1000})
-        //grid.material = new GridMaterial("gridmaterial", scene)
+        grid.material = new GridMaterial("gridmaterial", scene)
+
+ // Catmull-Rom spline
+  const splinePoints = [new Vector3(5, 4, 2)]
+  const scale = 10
+  const length = 10
+
+  for (let i = 0; i < length; i++) {
+    splinePoints.push(new Vector3(Math.abs(i * Math.random()* scale), Math.abs(i * Math.random() * scale/5 + 2), Math.abs(i * Math.random() * scale)))
+  }
+    splinePoints.push(new Vector3(5, 4, 2))
+
+  const myCurve = Curve3.CreateCatmullRomSpline(splinePoints, 20)
+  const myPath = new Path3D(myCurve.getPoints())
+  const tangents = myPath.getTangents()
+  const normals = myPath.getNormals()
+  const binormals = myPath.getBinormals()
+  const curvePath = myPath.getCurve()
+
+  //MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)
+
+  // camera definition
+  const camera = new UniversalCamera("dollycamera", new Vector3(5, 4, 2), scene);
+  camera.attachControl(canvas, true);
+  camera.setTarget(new Vector3(0, 0, 0));
+  //camera.fov = Math.PI/2;
+  //camera.minZ = 0.01;
+  //camera.maxZ = 25;
+  camera.updateUpVectorFromRotation = true;
+
+
+function runCameraPath(scene) {
+
+      const frameRate = 60;
+      const posAnim = new Animation("cameraPos", "position", frameRate, Animation.ANIMATIONTYPE_VECTOR3);
+      const posKeys = [];
+      const rotAnim = new Animation("cameraRot", "rotationQuaternion", frameRate, Animation.ANIMATIONTYPE_QUATERNION);
+      const rotKeys = [];
+
+      for (let i = 0; i < curvePath.length; i++) {
+            const position = curvePath[i];
+            const tangent = tangents[i];
+            const binormal = binormals[i];
+            const rotation = Quaternion.FromLookDirectionRH(tangent, binormal);
+
+            posKeys.push({frame: i * frameRate, value: position});
+            rotKeys.push({frame: i * frameRate, value: rotation});
+      }
+
+      posAnim.setKeys(posKeys);
+      rotAnim.setKeys(rotKeys);
+
+      camera.animations.push(posAnim);
+      camera.animations.push(rotAnim);
+
+      scene.activeCamera = camera;
+      scene.beginAnimation(camera, 0, frameRate*curvePath.length, true);
   
-  // Load and position mesh
-//   SceneLoader.ImportMesh("", "http://localhost:3000/mesh", "Warehouse.gltf", scene, (mesh) => {
-      
-//   })
+}
+
+runCameraPath(scene)
+  
+
+  
+  // Load and position mesh // issue**
+  SceneLoader.ImportMesh("", "./assets/", "CharacterModel.gltf", scene, (mesh) => {
+      setIsLoaded(true)
+  })
+
+//   if(isLoaded === true) {
+//       const skyMaterial = new SkyMaterial("skyMat", scene)
+//         skyMaterial.backFaceCulling = false
+//         skyMaterial.inclination = 0.1
+//         skyMaterial.azimuth = 0.5
+//       const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
+//         skyBox.material = skyMaterial
+// }
 
 };
 

@@ -417,8 +417,8 @@
   "user": [
     {
     "id": 1,
-    "name": "hot grandma",
-    "image": "",
+    "name": "user icon",
+    "image": "https://icons-for-free.com/iconfiles/png/512/man+person+profile+user+icon-1320073176482503236.png",
     "price": 1000000000000,
     "description": "Gabriels abuela"
     },
@@ -630,6 +630,7 @@
     "price": "",
     "description": ""
   }
+<<<<<<< HEAD
   ,
   {
     "id": 24,
@@ -1271,5 +1272,7 @@
       ]
   }
   
+=======
+>>>>>>> 52b33ec10187350dba761c4909f417b7650fe522
 ]
 }
