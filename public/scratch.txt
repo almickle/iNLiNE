@@ -8,3 +8,257 @@
   // const myCurve = Curve3.CreateCatmullRomSpline(splinePoints, 20)
   // console.log(myCurve)
   // MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)
+
+
+      //   // Attaches the camera to the canvas
+      //   camera.attachControl(canvas, true);
+      //   // Points the camera towards the scene origin
+      //   camera.setTarget(new Vector3(-10, 2, -5));
+
+  class Playground {
+    
+    public static CreateScene(engine: BABYLON.Engine, canvas: HTMLCanvasElement): BABYLON.Scene {
+        var scene = new BABYLON.Scene(engine);
+        var camera = new BABYLON.ArcRotateCamera("camera1", -Math.PI/3, Math.PI/4, 15, new BABYLON.Vector3(0,0,0), scene);
+        camera.attachControl(canvas, true);
+
+        var light = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(0, 1, 0), scene);
+        light.intensity = 1;
+
+        var ground = BABYLON.MeshBuilder.CreateGroundFromHeightMap("ground", "textures/heightmap.png", {width: 10, height: 10, subdivisions: 500, minHeight: 0, maxHeight: 5}, scene);
+
+        let pathGroup = new BABYLON.Mesh("pathGroup");
+
+        // 
+        // PATH DEFINITION
+        // Here we define the path along where the camera will move. 
+        // This path is comprised of chained cubic Bèzier curves.
+        //
+        let v3 = (x, y, z) => new BABYLON.Vector3(x,y,z);
+        let curve = BABYLON.Curve3.CreateCubicBezier(v3(5,0,0), v3(2.5, 2.5, -0.5), v3(1.5, 2, -1), v3(1, 2, -2), 10);
+        let curveCont = BABYLON.Curve3.CreateCubicBezier(v3(1, 2, -2), v3(0, 2, -4.5), v3(-2, 1, -3.5), v3(-0.75, 3, -2), 10);
+        curve = curve.continue(curveCont);
+        curveCont = BABYLON.Curve3.CreateCubicBezier(v3(-0.75, 3, -2), v3(0, 4, -1), v3(0.5, 4.5, 0), v3(-0.5, 4.75, 1), 10);
+        curve = curve.continue(curveCont);
+        curveCont = BABYLON.Curve3.CreateCubicBezier(v3(-0.5, 4.75, 1), v3(-1, 4.75, 1.5), v3(-1.5, 4, 2.5), v3(-2, 3, 3.5), 10);
+        curve = curve.continue(curveCont);
+        curveCont = BABYLON.Curve3.CreateCubicBezier(v3(-2, 3, 3.5), v3(-2.5, 2, 4), v3(-1, 2.5, 5), v3(0, 0, 5), 10);
+        curve = curve.continue(curveCont);
+        var curveMesh = BABYLON.MeshBuilder.CreateLines(
+            "bezier", {points: curve.getPoints()}, scene);
+        curveMesh.color = new BABYLON.Color3(1, 1, 0.5);
+        curveMesh.parent = pathGroup;
+
+        // Transform the curves into a proper Path3D object and get its orientation information
+        var path3d = new BABYLON.Path3D(curve.getPoints());
+        var tangents = path3d.getTangents();
+        var normals = path3d.getNormals();
+        var binormals = path3d.getBinormals();
+        var curvePath = path3d.getCurve();
+        
+        // visualisation
+        for(var p = 0; p < curvePath.length; p++) {
+            var tg = BABYLON.MeshBuilder.CreateLines('tg', {points: [ curvePath[p], curvePath[p].add(tangents[p]) ]}, scene);
+            tg.color = BABYLON.Color3.Red();
+            tg.parent = pathGroup;
+            var no = BABYLON.MeshBuilder.CreateLines('no', {points: [ curvePath[p], curvePath[p].add(normals[p]) ]}, scene);
+            no.color = BABYLON.Color3.Blue();
+            no.parent = pathGroup;
+            var bi = BABYLON.MeshBuilder.CreateLines('bi', {points: [ curvePath[p], curvePath[p].add(binormals[p]) ]}, scene);
+            bi.color = BABYLON.Color3.Green();
+            bi.parent = pathGroup;
+        }
+
+        //
+        // CAMERA AND ANIMATION DEFINITION
+        // Define the camera that will move along the path
+        const movingCamera = new BABYLON.UniversalCamera("movingCamera", new BABYLON.Vector3(), scene);
+        movingCamera.fov = Math.PI/2;
+        movingCamera.minZ = 0.01;
+        movingCamera.maxZ = 25;
+        movingCamera.updateUpVectorFromRotation = true;
+
+
+        // Define the position and orientation animations that will be populated
+        // according to the Path3D properties 
+        const frameRate = 60;
+        const posAnim = new BABYLON.Animation("cameraPos", "position", frameRate, BABYLON.Animation.ANIMATIONTYPE_VECTOR3);
+        const posKeys = [];
+        const rotAnim = new BABYLON.Animation("cameraRot", "rotationQuaternion", frameRate, BABYLON.Animation.ANIMATIONTYPE_QUATERNION);
+        const rotKeys = [];
+
+        for (let i = 0; i < curvePath.length; i++) {
+            const position = curvePath[i];
+            const tangent = tangents[i];
+            const binormal = binormals[i];
+
+            const rotation = BABYLON.Quaternion.FromLookDirectionRH(tangent, binormal);
+
+            posKeys.push({frame: i * frameRate, value: position});
+            rotKeys.push({frame: i * frameRate, value: rotation});
+            
+        }
+
+        posAnim.setKeys(posKeys);
+        rotAnim.setKeys(rotKeys);
+
+        movingCamera.animations.push(posAnim);
+        movingCamera.animations.push(rotAnim);
+
+        //
+        // GUI AND EXTRA VISUALIZATION DEFINITION
+        //
+        var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("myUI");
+
+        let viewPathButton = BABYLON.GUI.Button.CreateSimpleButton("viewPath", "View Camera Path");
+        viewPathButton.width = 0.2;
+        viewPathButton.height = '24px';
+        viewPathButton.background = 'black';
+        viewPathButton.color = 'white';
+        viewPathButton.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
+        viewPathButton.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_LEFT;
+        let pathEnabled = false;
+        pathGroup.setEnabled(pathEnabled);
+        viewPathButton.onPointerClickObservable.add(() => {
+            pathEnabled = !pathEnabled;
+            pathGroup.setEnabled(pathEnabled);
+        });
+        advancedTexture.addControl(viewPathButton);
+
+        let showOverheadCameraButton = BABYLON.GUI.Button.CreateSimpleButton("showOverhead", "Use Overhead Camera");
+        showOverheadCameraButton.width = 0.2;
+        showOverheadCameraButton.height = '24px';
+        showOverheadCameraButton.background = 'black';
+        showOverheadCameraButton.color = 'white';
+        showOverheadCameraButton.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
+        showOverheadCameraButton.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_CENTER;
+        showOverheadCameraButton.onPointerClickObservable.add(() => {
+            scene.activeCamera = camera;
+            scene.stopAnimation(movingCamera);
+        });
+        advancedTexture.addControl(showOverheadCameraButton);
+
+        let showTrackCameraButton = BABYLON.GUI.Button.CreateSimpleButton("showOverhead", "Use Track Camera");
+        showTrackCameraButton.width = 0.2;
+        showTrackCameraButton.height = '24px';
+        showTrackCameraButton.background = 'black';
+        showTrackCameraButton.color = 'white';
+        showTrackCameraButton.verticalAlignment = BABYLON.GUI.Control.VERTICAL_ALIGNMENT_BOTTOM;
+        showTrackCameraButton.horizontalAlignment = BABYLON.GUI.Control.HORIZONTAL_ALIGNMENT_RIGHT;
+        showTrackCameraButton.onPointerClickObservable.add(() => {
+            scene.activeCamera = movingCamera;
+            scene.beginAnimation(movingCamera, 0, frameRate*curvePath.length, true);
+        });
+        advancedTexture.addControl(showTrackCameraButton);
+
+        //
+        // VISUAL STUFF: MATERIALS AND MORE MOUNTAINS
+        //
+        // Create tri-planar material
+        var triPlanarMaterial = new BABYLON.TriPlanarMaterial("triplanar", scene);
+        triPlanarMaterial.diffuseTextureX = new BABYLON.Texture("textures/rock.png", scene);
+        triPlanarMaterial.diffuseTextureY = new BABYLON.Texture("textures/grass.png", scene);
+        triPlanarMaterial.diffuseTextureZ = new BABYLON.Texture("textures/floor.png", scene);
+        triPlanarMaterial.normalTextureX = new BABYLON.Texture("textures/rockn.png", scene);
+        triPlanarMaterial.normalTextureY = new BABYLON.Texture("textures/grassn.png", scene);
+        triPlanarMaterial.normalTextureZ = new BABYLON.Texture("textures/rockn.png", scene);
+        triPlanarMaterial.specularPower = 32;
+        triPlanarMaterial.tileSize = 5.0;
+
+        ground.material = triPlanarMaterial;
+
+        var hdrTexture = new BABYLON.CubeTexture("textures/Runyon_Canyon_A_2k_cube_specular.env", scene);
+        const skybox = scene.createDefaultSkybox(hdrTexture, true, 100, 0.1, true);
+        
+        // Create a mountain chain on the edges to prevent a sudden transition from the ground to
+        // the skybox
+        const mountainGroup = new BABYLON.Mesh("mgroup");
+        
+        const mountain1 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m1", "textures/heightMap.png", {
+            width: 10,
+            height: 10,
+            subdivisions: 50,
+            minHeight: 0,
+            maxHeight: 3
+        });
+        mountain1.position.x = -4;
+        mountain1.position.z = -5;
+        mountain1.position.y = 0.001;
+        mountain1.material = triPlanarMaterial;
+        mountain1.parent = mountainGroup;
+
+        const mountain2 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m2", "textures/heightMap.png", {
+            width: 15,
+            height: 15,
+            subdivisions: 50,
+            minHeight: 0,
+            maxHeight: 3.4
+        });
+        mountain2.rotation.y = Math.PI/2;
+        mountain2.position.x = -1;
+        mountain2.position.z = -7.5;
+        mountain2.position.y = 0.002;
+        mountain2.material = triPlanarMaterial;
+
+        const mountain3 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m3", "textures/heightMap.png", {
+            width: 8,
+            height: 7,
+            subdivisions: 30,
+            minHeight: 0,
+            maxHeight: 5
+        });
+        //mountain3.rotation.y = -Math.PI/6;
+        mountain3.position.x = -5;
+        mountain3.position.z = 4;
+        mountain3.position.y = 0.003;
+        mountain3.material = triPlanarMaterial;
+
+        const mountain4 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m4", "textures/heightMap.png", {
+            width: 8,
+            height: 8,
+            subdivisions: 24,
+            minHeight: 0,
+            maxHeight: 3
+        });
+        mountain4.rotation.y = -Math.PI/12;
+        mountain4.position.x = -5;
+        mountain4.position.z = 0;
+        mountain4.position.y = 0.004;
+        mountain4.material = triPlanarMaterial;
+
+        const mountain5 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m5", "textures/heightMap.png", {
+            width: 10,
+            height: 7,
+            subdivisions: 18,
+            minHeight: 0,
+            maxHeight: 3.7
+        });
+        mountain5.rotation.y = Math.PI/12;
+        mountain5.position.x = -2;
+        mountain5.position.z = 6;
+        mountain5.position.y = 0.005;
+        mountain5.material = triPlanarMaterial;
+
+        const mountain6 = BABYLON.MeshBuilder.CreateGroundFromHeightMap("m6", "textures/heightMap.png", {
+            width: 10,
+            height: 7,
+            subdivisions: 18,
+            minHeight: 0,
+            maxHeight: 4
+        });
+        mountain6.rotation.y = Math.PI/4;
+        mountain6.position.x = 2;
+        mountain6.position.z = 5;
+        mountain6.position.y = 0.006;
+        mountain6.material = triPlanarMaterial;
+
+
+        scene.fogStart = 10;
+        scene.fogEnd = 100;
+        scene.fogMode = BABYLON.Scene.FOGMODE_LINEAR;
+        scene.fogColor = BABYLON.Color3.FromHexString("#FDD6C9");
+
+
+        return scene;
+    }
+}
