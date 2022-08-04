@@ -65,7 +65,7 @@ function Hub({ infoObject }) {
         id: "collection",
         class: "nav-button",
         text: "Collections",
-        tabs: ["Premier", "Dior", "Catabran", "Elexia"]
+        tabs: ["ALYX", "Dior", "Catabran", "Elexia"]
     }
 
     const sortInfo = {
