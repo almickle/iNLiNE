@@ -389,64 +389,64 @@
                 },
                 {
                 "id": 2,
-                "name": "",
+                "name": "lobortis elementum nibh",
                 "image": "https://static6.depositphotos.com/1037197/631/i/600/depositphotos_6311132-stock-photo-rubber-plant-ficus-isolated-on.jpg",
                 "price": "",
-                "description": ""
+                "description": "Lorem ipsum"
                 },
                 {
                   "id": 3,
-                  "name": "",
+                  "name": "sagittis aliquam malesuada",
                   "image": "https://st4.depositphotos.com/1785712/30902/i/600/depositphotos_309023240-stock-photo-leafy-green-ficus-guianensis-plant.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit volutpat maecenas volutpat."
                 },
                 {
                   "id": 4,
-                  "name": "",
+                  "name": "malesuada nunc vel",
                   "image": "https://static4.depositphotos.com/1001944/360/i/600/depositphotos_3603323-stock-photo-ficus-isolated.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante in nibh mauris cursus mattis molestie a iaculis at."
                 },
                 {
                   "id": 5,
-                  "name": "",
+                  "name": "varius quam quisque",
                   "image": "https://static4.depositphotos.com/1026290/368/i/600/depositphotos_3682375-stock-photo-houseplant.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh."
                 },
                 {
                   "id": 6,
-                  "name": "",
+                  "name": "nisi est sit",
                   "image": "https://st.depositphotos.com/2895903/3814/i/600/depositphotos_38142993-stock-photo-plant-isolated-in-the-pot.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna sit amet purus gravida quis blandit."
                 },
                 {
                   "id": 7,
-                  "name": "",
+                  "name": "augue ut lectus",
                   "image": "https://st3.depositphotos.com/1055085/16413/i/600/depositphotos_164138688-stock-photo-miniature-artificial-tree.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc."
                 },
                 {
                   "id": 8,
-                  "name": "",
+                  "name": "eget arcu dictum",
                   "image": "https://st4.depositphotos.com/2103661/25429/i/600/depositphotos_254297712-stock-photo-sedum-succulent-plant-in-a.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi."
                 },{
                   "id":9,
                   "name": "",
                   "image": "https://st3.depositphotos.com/1097818/14674/i/600/depositphotos_146740841-stock-photo-young-sansevieria-trifasciata-a-potted.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi."
                 },{
                   "id":10,
-                  "name": "",
+                  "name": "urna duis convallis",
                   "image": "https://st2.depositphotos.com/3897335/9007/i/600/depositphotos_90074820-stock-photo-green-potted-plant.jpgxs",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum."
                 },{
                   "id":11,
                   "name": "Drosera Capensis",
@@ -463,79 +463,79 @@
                 },
                 {
                   "id": 13,
-                  "name": "",
+                  "name": "fringilla phasellus faucibus",
                   "image": "https://static4.depositphotos.com/1000662/324/i/600/depositphotos_3240999-stock-photo-green-home-plant-in-flower.jpg",
                   "price": 35.00,
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim blandit volutpat maecenas volutpat blandit aliquam."
                 },
                 {
                   "id": 14,
-                  "name": "",
+                  "name": "aliquam sem et",
                   "image": "https://st4.depositphotos.com/1484771/37837/i/600/depositphotos_378378248-stock-photo-aloe-vera-plant-white-ceramic.jpg",
                   "price": 19.99,
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id volutpat lacus laoreet non."
                 },
                 {
                   "id": 15,
-                  "name": "",
+                  "name": "dui faucibus in",
                   "image": "https://static3.depositphotos.com/1000506/163/i/600/depositphotos_1636453-stock-photo-red-cactus-isolated.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
                 },
                 {
                   "id": 16,
-                  "name": "",
+                  "name": "tortor condimentum lacinia",
                   "image": "https://static8.depositphotos.com/1011976/1020/i/600/depositphotos_10209584-stock-photo-crassula.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat maecenas volutpat blandit aliquam etiam."
                 },
                 {
                   "id": 17,
-                  "name": "",
+                  "name": "urna molestie at",
                   "image": "https://st3.depositphotos.com/32554226/33810/i/600/depositphotos_338100718-stock-photo-money-tree-home-plant-of.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit sed ullamcorper morbi tincidunt ornare massa eget."
                 },
                 {
                   "id": 18,
-                  "name": "",
+                  "name": "eget egestas purus",
                   "image": "https://st.depositphotos.com/38417542/51407/i/600/depositphotos_514079124-stock-photo-potted-haworthia-attenuata-zebra-plant.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ridiculus mus mauris vitae ultricies leo."
                 },
                 {
                   "id": 19,
-                  "name": "",
+                  "name": "ante metus dictumante metus dictum",
                   "image": "https://st2.depositphotos.com/6235482/10241/i/600/depositphotos_102419938-stock-photo-tus-in-pot.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor purus non enim praesent elementum facilisis leo."
                 },
                 {
                   "id": 20,
-                  "name": "",
+                  "name": "euismod in pellentesque",
                   "image": "https://st.depositphotos.com/1833357/3825/i/600/depositphotos_38259909-stock-photo-christmas-cactus-isolated-on-white.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus."
                 },
                 {
                   "id": 21,
                   "name": "",
                   "image": "https://st3.depositphotos.com/1393581/18998/i/600/depositphotos_189985052-stock-photo-indoor-plant-white-orchid-flower.jpg",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique senectus et netus et malesuada fames ac turpis egestas."
                 },
                 {
                   "id": 22,
-                  "name": "",
+                  "name": "scelerisque viverra mauris",
                   "image": "https://media.istockphoto.com/photos/venus-flytrap-in-a-pot-picture-id175525625?k=20&m=175525625&s=612x612&w=0&h=QbY6zg5_pC3KfcPxT6DK36aX15s-kDOHvGKeSiHUCn8=",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tempus iaculis urna id."
                 },{
                   "id": 23,
-                  "name": "",
+                  "name": "a diam maecenas",
                   "image": "https://media.istockphoto.com/photos/common-sundew-isolated-on-white-background-picture-id177817260?k=20&m=177817260&s=612x612&w=0&h=iZGscyP_FbV-aJNR_0f0OxtwC34-TNy0JOc6NVhkx2Q=",
                   "price": "",
-                  "description": ""
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim."
                 }
         ]
     }
