@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import DropDown from "./DropDown";
 
 // component imports
 // import ClothingCard from "./ClothingCard";
@@ -11,7 +12,7 @@ import "./style/hubs/clothinghub.css"
 function ClothingHub({handleCardClick}) {
 
     const [clothingItems, setClothingItems] = useState([{id: "1", image: "https://media.dior.com/couture/ecommerce/media/catalog/product/E/I/1592293527_3SH118YJP_H069_E02_ZHC.jpg?imwidth=870"}])
-    const [dropDownVisible, setDropDownVisible] = useState({collection: false, sort: false, filter: false})
+    const [dropDownVisibility, setDropDownVisibility] = useState({collection: false, sort: false, filter: false})
 
     useEffect(() => {
       fetch("http://localhost:3000/clothing")
@@ -20,27 +21,26 @@ function ClothingHub({handleCardClick}) {
     }, [])
 
     useEffect(() => {
-        for (const key in dropDownVisible) {
-            if(dropDownVisible[key] === true) {
-            const currentDropDown = document.getElementById(key)
-                  currentDropDown.style.height = "400%"
+        for (const key in dropDownVisibility) {
+            if(dropDownVisibility[key] === true) {
+                document.getElementById(key).style.height = "fit-content"
             } else {
                 document.getElementById(key).style.height = "70%"
             }
         }
 
-    }, [dropDownVisible])
+    }, [dropDownVisibility])
 
     function handleCollectionClick() {
-        setDropDownVisible({collection: true, sort: false, filter: false})
+        setDropDownVisibility({collection: true, sort: false, filter: false})
     }
 
     function handleSortClick(event) {
-        setDropDownVisible({collection: false, sort: true, filter: false})
+        setDropDownVisibility({collection: false, sort: true, filter: false})
     }
 
     function handleFilterClick(event) {
-        setDropDownVisible({collection: false, sort: false, filter: true})
+        setDropDownVisibility({collection: false, sort: false, filter: true})
     }
     
 
@@ -52,14 +52,35 @@ function ClothingHub({handleCardClick}) {
         )
     })
 
+    const collectionInfo = {
+        id: "collection",
+        class: "nav-button",
+        text: "Collections",
+        tabs: ["Premier", "Dior", "Catabran", "Elexia"]
+    }
+
+    const sortInfo = {
+        id: "sort",
+        class: "nav-button",
+        text: "Sort",
+        tabs: ["Price", "Trend"]
+    }
+
+    const filterInfo = {
+        id: "filter",
+        class: "nav-button",
+        text: "Filter",
+        tabs: ["Gender", "Designer", "Type"]
+    }
+
     return (
         <div id="clothing-hub">
             <h1 id="clothing-main-header">Collection</h1>
             <span id="linebreak-C"></span>
             <div id="nav-bar">
-                <span id="collection" className="nav-button" onClick={handleCollectionClick}>Collections</span>
-                <span id="sort" className="nav-button" onClick={handleSortClick}>Sort</span>
-                <span id="filter" className="nav-button" onClick={handleFilterClick}>Filter</span>
+                <DropDown infoObject={collectionInfo} handleCollectionClick={handleCollectionClick} visibility={dropDownVisibility} />
+                <DropDown infoObject={filterInfo} handleCollectionClick={handleFilterClick} visibility={dropDownVisibility} />
+                <DropDown infoObject={sortInfo} handleCollectionClick={handleSortClick} visibility={dropDownVisibility} />
             </div>
             <div id="clothing-items">
                 {clothingElements}

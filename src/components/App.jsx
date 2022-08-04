@@ -18,7 +18,7 @@ import "./style/canvas.css";
 // App Component
 function App() {
 
-const [isLoaded, setIsLoaded] = useState(false)
+// const [isLoaded, setIsLoaded] = useState(false)
 
   
 // Function: scene config
@@ -55,7 +55,7 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
   }
     splinePoints.push(new Vector3(5, 4, 2))
 
-  const myCurve = Curve3.CreateCatmullRomSpline(splinePoints, 20)
+  const myCurve = Curve3.CreateCatmullRomSpline(splinePoints, 20, true)
   const myPath = new Path3D(myCurve.getPoints())
   const tangents = myPath.getTangents()
   const normals = myPath.getNormals()
@@ -106,7 +106,7 @@ runCameraPath(scene)
   
   // Load and position mesh // issue**
   SceneLoader.ImportMesh("", "./assets/", "CharacterModel.gltf", scene, (mesh) => {
-      setIsLoaded(true)
+      
   })
 
 //   if(isLoaded === true) {

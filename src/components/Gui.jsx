@@ -82,7 +82,7 @@ function handleCardClick(clothing){
 }
 function handleCardClick(plant){
     console.log(plant)
-    setGuiElements([<PlantCard key={plant.id} plant={plant}/>])
+    setGuiElements([<PlantCard key={plant.id} plant={plant}/>, <Left key="LB" onLeft={handleRightClick}/>])
 }
 function handleLiveShop() {
     setGuiElements()
