@@ -42,7 +42,7 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
         light.intensity = 0.7;
 
   // Create grid
-  const grid = MeshBuilder.CreateGroundFromHeightMap("heightmap", "public/assets/Heightmap.png", {width: 1000, height: 1000, subdivisions: 100}, scene)
+  const grid = MeshBuilder.CreateGroundFromHeightMap("heightmap", "https://1.bp.blogspot.com/-BNjSPg6C2SU/YRbYuks-I8I/AAAAAAAAf2I/f0NgDQcOz4UwG0hvYylq_Oy9oI5GotXZQCLcBGAsYHQ/s1081/snowdon.png", {width: 1000, height: 1000, subdivisions: 100, minHeight: -100, maxHeight: 10}, scene, false)
         grid.material = new GridMaterial("gridmaterial", scene)
 
  // Catmull-Rom spline
