@@ -5,7 +5,7 @@ import "./style/buttons/right.css"
 
 
 // component function
-function Right({ onRight, hubInfo }){
+function Right({ onRight }){
 
     const [visibility, setVisibility] = useState(false)
 

@@ -1,21 +1,35 @@
 import React, {useState, useEffect} from "react";
 
 // stylesheet imports
+import "./style/hubs/hub.css"
 import "./style/hubs/nfthub.css"
+import "./style/hubs/clothinghub.css"
+import "./style/hubs/planthub.css"
 import "./style/buttons/dropdown.css"
 
+// component imports
 import DropDown from "./DropDown";
 
 
 // component function
-function Hub({infoObject, hubInfo}) {
+function Hub({ infoObject }) {
+
+    const { hub, imgdivID, imageID, spanID, divID, navbarID, text } = infoObject
+
+    console.log(hub)
     
     const [dropDownVisibility, setDropDownVisibility] = useState({collection: false, sort: false, filter: false})
+    const [hubInfo, setHubInfo] = useState({[hub]:[]})
 
-    console.log(hubInfo)
-    const { hub, imgdivID, imageID, spanID, divID, navbarID, text } = infoObject
-    const content = hubInfo
+    useEffect(() => {
+    fetch("http://localhost:3000/hubinfo")
+    .then(resp => resp.json())
+    .then(data => setHubInfo(data))
+    }, [])
 
+    useEffect(() => {console.log(hubInfo)}, [hubInfo])
+
+    const content = hubInfo[hub]
 
     useEffect(() => {
         for (const key in dropDownVisibility) {
@@ -25,20 +39,27 @@ function Hub({infoObject, hubInfo}) {
                 document.getElementById(key).style.height = "70%"
             }
         }
-
     }, [dropDownVisibility])
 
     function handleCollectionClick() {
         setDropDownVisibility({collection: true, sort: false, filter: false})
     }
 
-    function handleSortClick(event) {
+    function handleSortClick() {
         setDropDownVisibility({collection: false, sort: true, filter: false})
     }
 
-    function handleFilterClick(event) {
+    function handleFilterClick() {
         setDropDownVisibility({collection: false, sort: false, filter: true})
     }
+
+    const contentElements = content.map((item) => {   
+        return(
+            <div key={item.id} id={imgdivID} className="mincard-div">
+                <img key={item.id} id={imageID} className="minicard-img" src={item.image}></img>
+            </div>
+            )
+    })
 
     const collectionInfo = {
         id: "collection",
@@ -61,22 +82,14 @@ function Hub({infoObject, hubInfo}) {
         tabs: ["Gender", "Designer", "Type"]
     }
 
-    const contentElements = content.map((item) => {   
-        return(
-            <div key={item.id} id={imgdivID} className="mincard-div">
-                <img key={item.id} id={imageID} className="minicard-img" src={item.image}></img>
-            </div>
-            )
-    })
-
     return (
         <div className="hub">
             <h1 className="hub-header">{text}</h1>
             <span id={spanID} className="hub-span"></span>
             <div id={navbarID} className="navbar">
-                <DropDown infoObject={collectionInfo} handleCollectionClick={handleCollectionClick} visibility={dropDownVisibility} />
-                <DropDown infoObject={filterInfo} handleCollectionClick={handleFilterClick} visibility={dropDownVisibility} />
-                <DropDown infoObject={sortInfo} handleCollectionClick={handleSortClick} visibility={dropDownVisibility} />
+                <DropDown buttonInfo={collectionInfo} handleCollectionClick={handleCollectionClick} visibility={dropDownVisibility} />
+                <DropDown buttonInfo={filterInfo} handleCollectionClick={handleFilterClick} visibility={dropDownVisibility} />
+                <DropDown buttonInfo={sortInfo} handleCollectionClick={handleSortClick} visibility={dropDownVisibility} />
             </div>
             <div id={divID} className="items-container">
                 {contentElements}
