@@ -100,7 +100,7 @@ function runCameraPath(scene) {
   
 }
 
-runCameraPath(scene)
+//runCameraPath(scene)
   
 
   
