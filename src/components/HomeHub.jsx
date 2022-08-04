@@ -20,10 +20,10 @@ export default ({onLiveShop}) => {
     const [favorites, setFavorites] = useState([{id: "1", image: "URL"}])
 
     useEffect(() => {
-        fetch("http://localhost:3000/clothing")
+        fetch("http://localhost:3000/hubinfo")
         .then(resp => resp.json())
         .then(data => {
-            setFavorites(data)})
+            setFavorites(data.clothing)})
     }, [])
 
     const iconElements = favorites.map((element) => {

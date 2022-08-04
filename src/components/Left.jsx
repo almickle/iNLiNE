@@ -5,7 +5,7 @@ import "./style/buttons/left.css"
 
 
 // component function
-function Left({ onLeft }){
+function Left({ onLeft, hubInfo }){
 
     const [visibility, setVisibility] = useState(false)
 
@@ -19,7 +19,7 @@ function Left({ onLeft }){
 
     return(
         <div id="left-div" onMouseOver={handleHoverIn} onMouseOut={handleHoverOut}>
-            <div id="left-button" onClick={onLeft}>
+            <div id="left-button" onClick={() => onLeft(hubInfo)}>
                 <div id="left-arrow"></div>
             </div>
         </div>

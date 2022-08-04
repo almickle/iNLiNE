@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // Babylon imports
-import { FreeCamera, Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3, Curve3, Path3D, UniversalCamera, Quaternion, Animation, Mesh } from "@babylonjs/core";
+import { Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3, Curve3, Path3D, UniversalCamera, Quaternion, Animation, Mesh } from "@babylonjs/core";
 import SceneComponent from "./SceneComponent";
 import { GridMaterial, SkyMaterial } from "@babylonjs/materials";
 import "@babylonjs/core";
@@ -18,9 +18,7 @@ import "./style/canvas.css";
 // App Component
 function App() {
 
-// const [isLoaded, setIsLoaded] = useState(false)
 
-  
 // Function: scene config
 const onSceneReady = (scene) => {
 
@@ -46,7 +44,7 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
         grid.material = new GridMaterial("gridmaterial", scene)
 
  // Catmull-Rom spline
-  const splinePoints = [new Vector3(5, 4, 2)]
+  const splinePoints = [new Vector3(82, -28, -144)]
   const scale = 10
   const length = 10
 
@@ -65,9 +63,9 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
 //   MeshBuilder.CreateLines("spline", {points: myCurve.getPoints()}, scene)
 
   // camera definition
-  const camera = new UniversalCamera("dollycamera", new Vector3(5, 4, 2), scene);
+  const camera = new UniversalCamera("dollycamera", new Vector3(82, -28, -144), scene);
   camera.attachControl(canvas, true);
-  camera.setTarget(new Vector3(0, 0, 0));
+  camera.setTarget(new Vector3(-82, -20, 144))
   camera.updateUpVectorFromRotation = true;
 
 
@@ -101,7 +99,6 @@ function runCameraPath(scene) {
 }
 
 //runCameraPath(scene)
-  
 
   
   // Load and position mesh // issue**
@@ -109,21 +106,12 @@ function runCameraPath(scene) {
       
   })
 
-//   if(isLoaded === true) {
-//       const skyMaterial = new SkyMaterial("skyMat", scene)
-//         skyMaterial.backFaceCulling = false
-//         skyMaterial.inclination = 0.1
-//         skyMaterial.azimuth = 0.5
-//       const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
-//         skyBox.material = skyMaterial
-// }
-
 };
 
 
 // Function: will run on every frame
 const onRender = (scene) => {
-
+  
 };
 
 return (

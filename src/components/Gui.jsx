@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 // component imports
 import Intro from "./Intro"
@@ -9,7 +9,7 @@ import Right from "./Right"
 import Up from "./Up"
 import Down from "./Down"
 
-import NFTHub from "./NFTHub"
+import Hub from "./Hub"
 import ClothingHub from "./ClothingHub"
 import PlantHub from "./PlantHub"
 import PlantCard from "./PlantCard"
@@ -20,9 +20,16 @@ import "./style/gui.css"
 
 
 // component function
-export default () => {
+export default ( {hubInfo} ) => {
 
 const [GuiElements, setGuiElements] = useState([<Intro onEnter={handleEnter} key="WP" />])
+const [hubInfo, setHubInfo] = useState({})
+
+useEffect(() => {
+  fetch("http://localhost:3000/hubinfo")
+  .then(resp => resp.json())
+  .then(data => {setHubInfo(data)})
+}, [])
 
 
 // event handling
@@ -58,38 +65,72 @@ function handleEnter() {
         }, 350)
 
     setTimeout(() => {
-        setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+        setGuiElements([<HomeHub onLiveShop={handleLiveShop} key="HH"/>, <Left key="LB" onLeft={handleLeftClick} hubInfo={hubInfo} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
     }, 1100)
 
 }
 
-function handleLeftClick() {
-    setGuiElements([<NFTHub key="NH"/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+const nftStyleInfo = {
+    imgdivID: "nft-image-div",
+    imageID: "nft-image",
+    headerID: "nft-main-header",
+    spanID: "nft-linebreaker",
+    divID: "nft-items",
+    navbarID: "nft-navbar",
+    text: "NFT Store",
 }
-function handleRightClick() {
-    setGuiElements([<ClothingHub key="CH" handleCardClick={handleCardClick}/>, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+
+const clothingStyleInfo = {
+    imgdivID: "clothing-image-div",
+    imageID: "clothing-image",
+    headerID: "clothing-main-header",
+    spanID: "clothing-linebreaker",
+    divID: "clothing-items",
+    navbarID: "clothing-navbar",
+    text: "Designer",
+}
+
+const plantStyleInfo = {
+    imgdivID: "plant-image-div",
+    imageID: "plant-image",
+    headerID: "plant-main-header",
+    spanID: "plant-linebreaker",
+    divID: "plant-items",
+    navbarID: "plant-navbar",
+    text: "Planta Planta",
 }
 
 function handleUpClick() {
-    setGuiElements([<UserHub key="USH" />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<UserHub key="USH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+}
+
+function handleLeftClick() {
+    setGuiElements([<Hub infoObject={nftStyleInfo} hubInfo={hubInfo} key="NH" />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick}/>])
+}
+
+function handleRightClick() {
+    setGuiElements([<Hub infoObject={clothingStyleInfo} hubInfo={hubInfo} key="CH" handleCardClick={handleCardClick}/>, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleDownClick() {
-    setGuiElements([<PlantHub key= "PH" handleCardClick={handleCardClick} />, <Left key="LB" onLeft={handleLeftClick}/>, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<Hub infoObject={plantStyleInfo} hubInfo={hubInfo} key="PH" handleCardClick={handleCardClick} />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
+
 function handleCardClick(clothing){
     setGuiElements([<ClothingHub key={clothing.id} clothing={clothing}/>])
 }
+
 function handleCardClick(plant){
     console.log(plant)
     setGuiElements([<PlantCard key={plant.id} plant={plant}/>, <Left key="LB" onLeft={handleRightClick}/>])
 }
+
 function handleLiveShop() {
     setGuiElements()
     const gui = document.getElementById('gui')
-    gui.style.backgroundColor = "white"
-    gui.style.height = "10%"
-    gui.style.top = "90%"
+          gui.style.backgroundColor = "white"
+          gui.style.height = "10%"
+          gui.style.top = "90%"
 }
 
 
