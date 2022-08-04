@@ -42,7 +42,7 @@ const skyBox = MeshBuilder.CreateBox("skyBox", {size: 1000}, scene)
         light.intensity = 0.7;
 
   // Create grid
-  const grid = MeshBuilder.CreateGround("grid", {width: 1000, height: 1000})
+  const grid = MeshBuilder.CreateGroundFromHeightMap("heightmap", "public/assets/Heightmap.png", {width: 1000, height: 1000, subdivisions: 100}, scene)
         grid.material = new GridMaterial("gridmaterial", scene)
 
  // Catmull-Rom spline

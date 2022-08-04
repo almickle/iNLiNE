@@ -1,0 +1,12 @@
+.hub {
+    width: 70%;
+    height: 62%;
+    position: absolute;
+    background-color: white;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    left: 15%;
+    top: 18%;
+    justify-content: center;
+}

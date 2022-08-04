@@ -28,7 +28,7 @@ function NFTHub() {
     })
 
     return (
-        <div id="nft-hub">
+        <div className="hub">
             <h1 id="nft-main-header">NFT Store</h1>
             <span id="linebreak-nft"></span>
             <div id="nft-items">

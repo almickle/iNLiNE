@@ -6,6 +6,7 @@ import DropDown from "./DropDown";
 
 // stylesheet imports
 import "./style/hubs/clothinghub.css"
+import "./style/hubs/hub.css"
 
 
 // component function
@@ -74,8 +75,8 @@ function ClothingHub({handleCardClick}) {
     }
 
     return (
-        <div id="clothing-hub">
-            <h1 id="clothing-main-header">Collection</h1>
+        <div className="hub">
+            <h1 id="clothing-main-header">Designer</h1>
             <span id="linebreak-C"></span>
             <div id="nav-bar">
                 <DropDown infoObject={collectionInfo} handleCollectionClick={handleCollectionClick} visibility={dropDownVisibility} />
