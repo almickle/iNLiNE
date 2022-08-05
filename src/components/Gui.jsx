@@ -145,10 +145,17 @@ const plantStyleInfo = {
     ]
 }
 
+function handleLiveShop() {
+    setGuiElements()
+    const gui = document.getElementById('gui')
+          gui.style.backgroundColor = "white"
+          gui.style.height = "10%"
+          gui.style.top = "90%"
+}
+
 function handleUpClick() {
     setGuiElements([<UserHub key="USH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
-
 
 function handleLeftClick() {
     setGuiElements([<Hub infoObject={nftStyleInfo} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
@@ -162,22 +169,10 @@ function handleDownClick() {
     setGuiElements([<Hub infoObject={plantStyleInfo} key="PH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
-// function handleCardClick(clothing){
-//     setGuiElements([<ClothingHub key={clothing.id} clothing={clothing}/>])
-// }
-
-// function handleCardClick(item){
-//     console.log(item)
-//     setGuiElements([<PlantCard key={item.id} plant={item}/>, <Left key="LB" onLeft={handleDownClick}/>])
-// }
-
-function handleLiveShop() {
-    setGuiElements()
-    const gui = document.getElementById('gui')
-          gui.style.backgroundColor = "white"
-          gui.style.height = "10%"
-          gui.style.top = "90%"
+function handleCardClick (event) {
+    console.log(event.target)
 }
+
 
 
 // jsx output

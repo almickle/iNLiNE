@@ -12,7 +12,7 @@ import DropDown from "./DropDown";
 
 
 // component function
-function Hub({ infoObject }) {
+function Hub({ infoObject, handleCardClick }) {
 
     const { hub, imgdivID, imageID, spanID, divID, navbarID, text, buttons } = infoObject
     
@@ -45,33 +45,21 @@ function Hub({ infoObject }) {
         }))
     }
 
+
     const contentElements = content.map((item) => {   
         return(
             <div key={item.id} id={imgdivID} className="mincard-div">
-                <img key={item.id} id={imageID} className="minicard-img" src={item.image} ></img>
+                <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={handleCardClick}></img>
             </div>
             )
     })
 
-    const collectionInfo = {
-        id: "collection",
-        class: "nav-button",
-        text: "Collections",
-        tabs: ["ALYX", "Dior", "Catabran", "Elexia"]
-    }
-
-    const sortInfo = {
-        id: "sort",
-        class: "nav-button",
-        text: "Sort",
-        tabs: ["Price", "Trend"]
-    }
 
     const navbarButtons = buttons.map((button, index) => {
         return (<DropDown buttonInfo={button} currentIndex={index} handleNavButtonClick={() => handleNavButtonClick(index)} visibility={dropDownVisibility} key={button.id}/>)
     })
 
-    
+
     return (
         <div className="hub">
             <h1 className="hub-header">{text}</h1>
