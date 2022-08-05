@@ -9,6 +9,13 @@ import "./style/buttons/dropdown.css"
 
 // component imports
 import DropDown from "./DropDown";
+import ModelViewer from "./ModelViewer";
+
+// Babylon imports
+import { Vector3, HemisphericLight, SceneLoader, AxesViewer, MeshBuilder, Material, Color3, Curve3, Path3D, UniversalCamera, Quaternion, Animation, Mesh, ArcRotateCamera } from "@babylonjs/core";
+import "@babylonjs/core";
+import "@babylonjs/loaders"
+import "@babylonjs/materials"
 
 
 // component function
@@ -93,7 +100,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         scene.clearColor = new Color3(1, 1, 1)
 
         const canvas = scene.getEngine().getRenderingCanvas();
-        const camera = new ArcRotateCamera("modelcamera", 1, 0, 10, new Vector3(0, 0, 0), scene);
+        const camera = new ArcRotateCamera("modelcamera", 1, 0, 1.2, new Vector3(0, 1, 0), scene);
               camera.panningAxis = new Vector3(1, 0, 0)
               camera.attachControl(canvas, true);
 
@@ -101,7 +108,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
               light.intensity = 0.7;
 
           SceneLoader.ImportMesh("", "./assets/", mesh, scene, (mesh) => {
-      
+
         })
     }
 
@@ -114,22 +121,13 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
             case 0:
                 const filteredItems = content.filter((item) => item.collection === event.target.textContent)
                 setDisplayItems(filteredItems.map((item) => {
-                    if(content.collection === "Catabran") {
-                        return(
-                            <div key={item.id} id={imgdivID} className="mincard-div" onClick={() => handleCardClick(item)}>
-                                <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                                    <span id="like-button" onClick={handleLike}>&#x2661;</span>
-                                    <div id="hovertext-div"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                                        <p id="minicard-name" className="minicard-info">{item.name}</p>
-                                        <p id="minicard-collection" className="minicard-info">collection: {item.collection}</p>
-                                        <p id="minicard-price" className="minicard-info">${item.price}</p>
-                                    </div>
-                                </div>
-                                <ModelViewer antialias onSceneReady={() => onSceneReady(scene, content.image)} onRender={onRender} id="modelViewer"/>
+                    if(item.collection === "Catabran") 
+                        {return(
+                            <div key={item.id} id={imgdivID} className="model-div">
+                                <ModelViewer antialias onSceneReady={(scene) => onSceneReady(scene, item.image)} onRender={onRender}/>
                             </div>
-                            )
-                    }   
-                    return(
+                            ) } else 
+                    {return(
                         <div key={item.id} id={imgdivID} className="mincard-div" onClick={() => handleCardClick(item)}>
                             <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                                 <span id="like-button" onClick={handleLike}>&#x2661;</span>
@@ -141,7 +139,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
                             </div>
                             <img key={item.id} id={imageID} className="minicard-img" src={item.image}></img>
                         </div>
-                        )
+                        )}
                 }))
                 break
             case 1:
