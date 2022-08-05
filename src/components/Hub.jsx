@@ -88,16 +88,58 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         }))
     }
 
+    const onSceneReady = (scene, mesh) => {
+
+        scene.clearColor = new Color3(1, 1, 1)
+
+        const canvas = scene.getEngine().getRenderingCanvas();
+        const camera = new ArcRotateCamera("modelcamera", 1, 0, 10, new Vector3(0, 0, 0), scene);
+              camera.panningAxis = new Vector3(1, 0, 0)
+              camera.attachControl(canvas, true);
+
+        const light = new HemisphericLight("modellight", new Vector3(0, 100, 30), scene);
+              light.intensity = 0.7;
+
+          SceneLoader.ImportMesh("", "./assets/", mesh, scene, (mesh) => {
+      
+        })
+    }
+
+    const onRender = (scene) => {
+        
+    };
+
     function handleDropDownClick (event, currentIndex) {
-        console.log(currentIndex)
-        console.log(event.target.textContent)
         switch (currentIndex) {
             case 0:
                 const filteredItems = content.filter((item) => item.collection === event.target.textContent)
-                setDisplayItems(filteredItems.map((item) => {   
+                setDisplayItems(filteredItems.map((item) => {
+                    if(content.collection === "Catabran") {
+                        return(
+                            <div key={item.id} id={imgdivID} className="mincard-div" onClick={() => handleCardClick(item)}>
+                                <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                                    <span id="like-button" onClick={handleLike}>&#x2661;</span>
+                                    <div id="hovertext-div"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                                        <p id="minicard-name" className="minicard-info">{item.name}</p>
+                                        <p id="minicard-collection" className="minicard-info">collection: {item.collection}</p>
+                                        <p id="minicard-price" className="minicard-info">${item.price}</p>
+                                    </div>
+                                </div>
+                                <ModelViewer antialias onSceneReady={() => onSceneReady(scene, content.image)} onRender={onRender} id="modelViewer"/>
+                            </div>
+                            )
+                    }   
                     return(
-                        <div key={item.id} id={imgdivID} className="mincard-div">
-                            <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
+                        <div key={item.id} id={imgdivID} className="mincard-div" onClick={() => handleCardClick(item)}>
+                            <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                                <span id="like-button" onClick={handleLike}>&#x2661;</span>
+                                <div id="hovertext-div"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                                    <p id="minicard-name" className="minicard-info">{item.name}</p>
+                                    <p id="minicard-collection" className="minicard-info">collection: {item.collection}</p>
+                                    <p id="minicard-price" className="minicard-info">${item.price}</p>
+                                </div>
+                            </div>
+                            <img key={item.id} id={imageID} className="minicard-img" src={item.image}></img>
                         </div>
                         )
                 }))

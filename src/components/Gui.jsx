@@ -175,7 +175,6 @@ function handleDownClick() {
 }
 
 function handleCardClick (item) {
-    console.log(item)
     setGuiElements([<Card key="Card" content={item} />, <Left key="LB" onLeft={handleLeftClick}/>])
 }
 
