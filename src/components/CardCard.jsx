@@ -10,8 +10,7 @@ function CardCard(){
             <div id="card-card-div">
                 <button id="home-button" >🏠</button>
             </div>
-            
-           
+  
     )
 }
 

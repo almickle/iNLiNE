@@ -18,6 +18,9 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
     
     const [dropDownVisibility, setDropDownVisibility] = useState(buttons.map((button) => button = false))
     const [hubInfo, setHubInfo] = useState({[hub]:[]})
+    const [displayItems, setDisplayItems] = useState([])
+
+    const content = hubInfo[hub]
 
     useEffect(() => {
         fetch("http://localhost:3000/hubinfo")
@@ -25,11 +28,15 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         .then(data => setHubInfo(data))
     }, [])
 
-    const content = hubInfo[hub]
-
-    const [displayItems, setDisplayItems] = useState()
-
-    // comment //
+    useEffect(() => {
+        setDisplayItems(content.map((item) => {   
+            return(
+                <div key={item.id} id={imgdivID} className="mincard-div">
+                    <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
+                </div>
+                )
+        }))
+    }, [hubInfo])
 
     useEffect(() => {
         buttons.forEach(button => {
@@ -39,7 +46,6 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
             const elementID = buttons[dropDownVisibility.findIndex((value) => value === true)].id
             document.getElementById(elementID).style.height = "fit-content"
         }
-
     }, [dropDownVisibility])
 
     function handleNavButtonClick (index) {
@@ -49,16 +55,31 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         }))
     }
 
-    const contentElements = content.map((item) => {   
-        return(
-            <div key={item.id} id={imgdivID} className="mincard-div">
-                <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
-            </div>
-            )
-    })
+    function handleDropDownClick (event, currentIndex) {
+        console.log(currentIndex)
+        console.log(event.target.textContent)
+        switch (currentIndex) {
+            case 0:
+                const filteredItems = content.filter((item) => item.collection === event.target.textContent)
+                setDisplayItems(filteredItems.map((item) => {   
+                    return(
+                        <div key={item.id} id={imgdivID} className="mincard-div">
+                            <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
+                        </div>
+                        )
+                }))
+                break
+            case 1:
+                break
+            case 2:
+                break
+            case 3:
+                break
+        }
+    }
 
     const navbarButtons = buttons.map((button, index) => {
-        return (<DropDown buttonInfo={button} currentIndex={index} handleNavButtonClick={() => handleNavButtonClick(index)} visibility={dropDownVisibility} key={button.id}/>)
+        return (<DropDown buttonInfo={button} currentIndex={index} visibility={dropDownVisibility} handleNavButtonClick={() => handleNavButtonClick(index)} handleDropDownClick={handleDropDownClick} key={button.id}/>)
     })
 
 
@@ -70,7 +91,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
                 {navbarButtons}
             </div>
             <div id={divID} className="items-container">
-                {contentElements}
+                {displayItems}
             </div>
         </div>
     )

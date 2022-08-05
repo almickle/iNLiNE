@@ -256,22 +256,23 @@
             "collection": "ALYX",
             "price": "",
             "description": ""
-          },{
+          },
+          {
             "id": 32,
             "name": "AAUJW0032OT01GLD0003 1017 ALYX 9SM BUCKLE NECKLACE",
             "image": "https://cdn.shopify.com/s/files/1/2138/3643/products/AAUJW0032OT01_GLD0003_S21_1_10208b96-6876-4e58-9dc0-500de1714312_1024x.jpg?v=1638525485",
             "collection": "ALYX",
             "price": 477,
             "description": "Brass chain with gold finish featuring 1017 ALYX 9SM logo charm and small anodized aluminum buckle with lazered logo."
-            },
-            {
-              "id": 33,
-              "name": "AAUJW0033OT01NDE0125 TRANSPARENT CHAIN NECKLACE",
-              "image": "https://cdn.shopify.com/s/files/1/2138/3643/products/AAUJW0033OT01_NDE0125_1_4dfa028e-12f3-415a-9ad1-07f50152dd8d_1024x.jpg?v=1638890075",
-              "collection": "ALYX",
-              "price": 229,
-              "description": "Recycled. nylon chain featuring signature Alyx small nylon rollercoaster buckle closure."
-              },
+          },
+          {
+            "id": 33,
+            "name": "AAUJW0033OT01NDE0125 TRANSPARENT CHAIN NECKLACE",
+            "image": "https://cdn.shopify.com/s/files/1/2138/3643/products/AAUJW0033OT01_NDE0125_1_4dfa028e-12f3-415a-9ad1-07f50152dd8d_1024x.jpg?v=1638890075",
+            "collection": "ALYX",
+            "price": 229,
+            "description": "Recycled. nylon chain featuring signature Alyx small nylon rollercoaster buckle closure."
+          },
               {
                 "id": 34,
                 "name": "AAUJW0170OT01GRY0002 A CHARM NECKLACE",

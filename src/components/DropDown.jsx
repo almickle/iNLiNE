@@ -5,16 +5,13 @@ import "./style/buttons/dropdown.css"
 
 
 // component function
-function DropDown ({ buttonInfo, currentIndex, handleNavButtonClick, visibility }){
+function DropDown ({ buttonInfo, currentIndex, visibility, handleNavButtonClick, handleDropDownClick }){
 
 const dropDownElements = buttonInfo.tabs.map(each => {
     return (
-        <p key={each} className="dropdown-button">{each}</p>
+        <p key={each} className="dropdown-button" onClick={(event) => handleDropDownClick(event, currentIndex)}>{each}</p>
     )
 })
-
-console.log(visibility)
-console.log(currentIndex)
 
    if(visibility[currentIndex] === true) { return (
             <span id={buttonInfo.id} className="nav-button" onClick={handleNavButtonClick}>{buttonInfo.text}
