@@ -31,16 +31,16 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
     useEffect(() => {
         setDisplayItems(content.map((item) => {   
             return(
-                <div key={item.id} id={imgdivID} className="mincard-div">
+                <div key={item.id} id={imgdivID} className="mincard-div" onClick={() => handleCardClick(item)}>
                     <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
-                        <span id="like-button">&#x2661;</span>
+                        <span id="like-button" onClick={handleLike}>&#x2661;</span>
                         <div id="hovertext-div"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
                             <p id="minicard-name" className="minicard-info">{item.name}</p>
                             <p id="minicard-collection" className="minicard-info">collection: {item.collection}</p>
                             <p id="minicard-price" className="minicard-info">${item.price}</p>
                         </div>
                     </div>
-                    <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
+                    <img key={item.id} id={imageID} className="minicard-img" src={item.image}></img>
                 </div>
                 )
         }))
@@ -68,6 +68,16 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         if (event.target.className === "hoverinfo-div"){
             event.target.style.backgroundColor = "none"
             event.target.style.opacity = "0%"
+        }
+    }
+
+    function handleLike (event) {
+        const likeButton = event.target
+        if(likeButton.style.backgroundColor === "white") {
+            likeButton.style.backgroundColor = "red"
+        }
+        if(likeButton.style.backgroundColor === "red") {
+            likeButton.style.backgroundColor = "white"
         }
     }
 

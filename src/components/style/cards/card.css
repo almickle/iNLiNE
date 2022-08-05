@@ -1,0 +1,53 @@
+.card-main-div {
+    width: 60%;
+    height: 70%;
+    position: absolute;
+    background-color: white;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    left: 20%;
+    top: 15%;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-image {
+    position: absolute;
+    width: auto;
+    height: 64.41%;
+    right: -1%;
+    top: -1%;
+}
+
+.card-name-div {
+    width: 33%;
+    height: 10%;
+    right: 0%;
+    bottom: 28%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-name {
+    font-family: "CoreCircus", sans-serif;
+}
+
+.add-to-cart {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "CoreCircus", sans-serif;
+    border-radius: 1px;
+    width: 24%;
+    height: 10%;
+    right: 6%;
+    bottom: 14%;
+    background-color: black;
+    color: white;
+}
+
+.add-to-cart:hover {opacity: 75%;}
