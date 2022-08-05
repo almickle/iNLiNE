@@ -78,7 +78,7 @@ const nftStyleInfo = {
         { 
             id: "nft-B1",
             text: "Collections",
-            tabs: ["Crypto Punks","Bored Apes" , "Clone X", "NBA Top Shop"]
+            tabs: ["CryptoPunk","Bibos","Bored Apes" , "Clone X", "Rakkudos"]
         },
         { 
             id: "nft-B2",
