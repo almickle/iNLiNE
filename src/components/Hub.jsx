@@ -27,6 +27,10 @@ function Hub({ infoObject, handleCardClick }) {
 
     const content = hubInfo[hub]
 
+    const [displayItems, setDisplayItems] = useState()
+
+    // comment //
+
     useEffect(() => {
         buttons.forEach(button => {
             document.getElementById(button.id).style.height = "70%"
