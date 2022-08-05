@@ -16,16 +16,41 @@
     opacity: 85%;
 }
 
-#collection {
-    left: 52%;
+#clothing-B1 {
+    left: 61%;
 }
 
-#filter {
-    left: 73%;
+#clothing-B2 {
+    left: 78%;
 }
 
-#sort {
-   left: 86%;
+#clothing-B3 {
+   left: 90%;
+}
+
+#nft-B1 {
+    left: 71%;
+    border-color: brown;
+}
+
+#nft-B2 {
+    left: 88%;
+    border-color: brown;
+}
+
+#plant-B1 {
+    left: 61%;
+    border-color: lightpink;
+}
+
+#plant-B2 {
+    left: 78%;
+    border-color: lightpink;
+}
+
+#plant-B3 {
+   left: 90%;
+   border-color: lightpink;
 }
 
 .dropdown-button:hover {

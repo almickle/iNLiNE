@@ -5,7 +5,7 @@ import "./style/buttons/dropdown.css"
 
 
 // component function
-function DropDown ({ buttonInfo, handleCollectionClick, visibility }){
+function DropDown ({ buttonInfo, currentIndex, handleNavButtonClick, visibility }){
 
 const dropDownElements = buttonInfo.tabs.map(each => {
     return (
@@ -13,16 +13,19 @@ const dropDownElements = buttonInfo.tabs.map(each => {
     )
 })
 
-   if(Object.keys(visibility).find(key => visibility[key] === true) === buttonInfo.id) { return (
-            <span id={buttonInfo.id} className="nav-button" onClick={handleCollectionClick}>{buttonInfo.text}
+console.log(visibility)
+console.log(currentIndex)
+
+   if(visibility[currentIndex] === true) { return (
+            <span id={buttonInfo.id} className="nav-button" onClick={handleNavButtonClick}>{buttonInfo.text}
                 {dropDownElements}
             </span>
     )
    } else { return (
-            <span id={buttonInfo.id} className={buttonInfo.class} onClick={handleCollectionClick}>{buttonInfo.text}
+            <span id={buttonInfo.id} className="nav-button" onClick={handleNavButtonClick}>{buttonInfo.text}
             </span>
-)}
-
+            )
+        }
 }
 
 export default DropDown
