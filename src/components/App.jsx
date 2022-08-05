@@ -94,7 +94,7 @@ function runCameraPath(scene) {
       camera.animations.push(rotAnim);
 
       scene.activeCamera = camera;
-      scene.beginAnimation(camera, 0, frameRate*curvePath.length, true);
+      scene.beginAnimation(camera, 0, frameRate * curvePath.length, true);
   
 }
 
