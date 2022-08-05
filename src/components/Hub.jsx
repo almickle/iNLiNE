@@ -32,6 +32,14 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         setDisplayItems(content.map((item) => {   
             return(
                 <div key={item.id} id={imgdivID} className="mincard-div">
+                    <div className="hoverinfo-div" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                        <span id="like-button">&#x2661;</span>
+                        <div id="hovertext-div"onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+                            <p id="minicard-name" className="minicard-info">{item.name}</p>
+                            <p id="minicard-collection" className="minicard-info">collection: {item.collection}</p>
+                            <p id="minicard-price" className="minicard-info">${item.price}</p>
+                        </div>
+                    </div>
                     <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
                 </div>
                 )
@@ -47,6 +55,21 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
             document.getElementById(elementID).style.height = "fit-content"
         }
     }, [dropDownVisibility])
+
+
+    function handleMouseOver (event) {
+        if (event.target.className === "hoverinfo-div"){
+            event.target.style.backgroundColor = "white"
+            event.target.style.opacity = "70%"
+        }
+    }
+
+    function handleMouseOut (event) {
+        if (event.target.className === "hoverinfo-div"){
+            event.target.style.backgroundColor = "none"
+            event.target.style.opacity = "0%"
+        }
+    }
 
     function handleNavButtonClick (index) {
         setDropDownVisibility(buttons.map((element, i) => {

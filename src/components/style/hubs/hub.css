@@ -65,3 +65,35 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.hoverinfo-div {
+    position: absolute;
+    width: 20%;
+    height: 60%;
+    background-color: white;
+    opacity: 0%;
+} 
+
+/* #hoverinfo-div:hover {
+    background-color: white;
+    opacity: 70%;
+} */
+
+#like-button {
+    position: absolute;
+    font-size: xx-large;
+    z-index: 3;
+    right: 3%;
+}
+
+.minicard-info {
+    margin: 10%;
+    z-index: 3;
+    font-size: large;
+    font-family: "CoreCircus", sans-serif;
+}
+
+#hovertext-div {
+    padding-top: 10%;
+    /* text-align: center; */
+}
