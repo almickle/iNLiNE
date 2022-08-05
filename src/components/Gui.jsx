@@ -11,6 +11,7 @@ import Down from "./Down"
 
 import Hub from "./Hub"
 import UserHub from "./UserHub"
+import Card from "./Card"
 
 
 // stylesheet imports
@@ -170,7 +171,7 @@ function handleDownClick() {
 }
 
 function handleCardClick (event) {
-    console.log(event.target)
+    setGuiElements([<Card />])
 }
 
 
