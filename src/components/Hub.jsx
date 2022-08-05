@@ -49,7 +49,7 @@ function Hub({ infoObject, handleCardClick }) {
     const contentElements = content.map((item) => {   
         return(
             <div key={item.id} id={imgdivID} className="mincard-div">
-                <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={handleCardClick}></img>
+                <img key={item.id} id={imageID} className="minicard-img" src={item.image} onClick={() => handleCardClick(content)}></img>
             </div>
             )
     })
