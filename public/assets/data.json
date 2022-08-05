@@ -880,6 +880,7 @@
                 "id": 1,
                 "name": "Gabrielus homosacaroso",
                 "image": "https://st3.depositphotos.com/1055484/33266/i/600/depositphotos_332667702-stock-photo-ficus-benjamina-houseplant.jpg",
+                "collection":"Home", 
                 "price": 40.50,
                 "description": "Gabriels abuela"
                 },
@@ -887,6 +888,7 @@
                 "id": 2,
                 "name": "lobortis elementum nibh",
                 "image": "https://static6.depositphotos.com/1037197/631/i/600/depositphotos_6311132-stock-photo-rubber-plant-ficus-isolated-on.jpg",
+                "collection":"Home", 
                 "price": "",
                 "description": "Lorem ipsum"
                 },
@@ -894,6 +896,7 @@
                   "id": 3,
                   "name": "sagittis aliquam malesuada",
                   "image": "https://st4.depositphotos.com/1785712/30902/i/600/depositphotos_309023240-stock-photo-leafy-green-ficus-guianensis-plant.jpg",
+                  "collection":"Home", 
                   "price": "",
 
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit volutpat maecenas volutpat."
@@ -902,6 +905,7 @@
                   "id": 4,
                   "name": "malesuada nunc vel",
                   "image": "https://static4.depositphotos.com/1001944/360/i/600/depositphotos_3603323-stock-photo-ficus-isolated.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ante in nibh mauris cursus mattis molestie a iaculis at."
                 },
@@ -909,6 +913,7 @@
                   "id": 5,
                   "name": "varius quam quisque",
                   "image": "https://static4.depositphotos.com/1026290/368/i/600/depositphotos_3682375-stock-photo-houseplant.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh."
                 },
@@ -916,6 +921,7 @@
                   "id": 6,
                   "name": "nisi est sit",
                   "image": "https://st.depositphotos.com/2895903/3814/i/600/depositphotos_38142993-stock-photo-plant-isolated-in-the-pot.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna sit amet purus gravida quis blandit."
                 },
@@ -923,6 +929,7 @@
                   "id": 7,
                   "name": "augue ut lectus",
                   "image": "https://st3.depositphotos.com/1055085/16413/i/600/depositphotos_164138688-stock-photo-miniature-artificial-tree.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin tempor id eu nisl nunc."
                 },
@@ -930,24 +937,28 @@
                   "id": 8,
                   "name": "eget arcu dictum",
                   "image": "https://st4.depositphotos.com/2103661/25429/i/600/depositphotos_254297712-stock-photo-sedum-succulent-plant-in-a.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi."
                 },{
                   "id":9,
                   "name": "",
                   "image": "https://st3.depositphotos.com/1097818/14674/i/600/depositphotos_146740841-stock-photo-young-sansevieria-trifasciata-a-potted.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi."
                 },{
                   "id":10,
                   "name": "urna duis convallis",
                   "image": "https://st2.depositphotos.com/3897335/9007/i/600/depositphotos_90074820-stock-photo-green-potted-plant.jpgxs",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vivamus at augue eget arcu dictum."
                 },{
                   "id":11,
                   "name": "Drosera Capensis",
                   "image": "https://st2.depositphotos.com/2258315/7786/i/450/depositphotos_77865956-stock-photo-sundew-drosera-isolated-on-a.jpg",
+                  "collection":"Carnivorous", 
                   "price": 20.00,
                   "description": "Drosera capensis, commonly known as the Cape sundew, is a small rosette-forming carnivorous species of perennial sundew native to the Cape in South Africa."
                 },
@@ -955,6 +966,7 @@
                   "id": 12,
                   "name": "Cephalotus follicularis",
                   "image": "https://st.depositphotos.com/2075661/2239/i/600/depositphotos_22397889-stock-photo-carnivorous-plant.jpg",
+                  "collection":"Carnivorous", 
                   "price": 40.00,
                   "description": "The only species of the family Cephalotaceae (order Oxalidales). Pitcher plants are found in a wide range of habitats with poor soil conditions, from pine barrens to sandy coastal swamps, and rely on carnivory to obtain nutrients such as nitrogen and phosphorus."
                 },
@@ -962,6 +974,7 @@
                   "id": 13,
                   "name": "fringilla phasellus faucibus",
                   "image": "https://static4.depositphotos.com/1000662/324/i/600/depositphotos_3240999-stock-photo-green-home-plant-in-flower.jpg",
+                  "collection":"Succulents", 
                   "price": 35.00,
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim blandit volutpat maecenas volutpat blandit aliquam."
                 },
@@ -969,6 +982,7 @@
                   "id": 14,
                   "name": "aliquam sem et",
                   "image": "https://st4.depositphotos.com/1484771/37837/i/600/depositphotos_378378248-stock-photo-aloe-vera-plant-white-ceramic.jpg",
+                  "collection":"Succulents", 
                   "price": 19.99,
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id volutpat lacus laoreet non."
                 },
@@ -976,6 +990,7 @@
                   "id": 15,
                   "name": "dui faucibus in",
                   "image": "https://static3.depositphotos.com/1000506/163/i/600/depositphotos_1636453-stock-photo-red-cactus-isolated.jpg",
+                  "collection":"Cacti", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus."
                 },
@@ -983,6 +998,7 @@
                   "id": 16,
                   "name": "tortor condimentum lacinia",
                   "image": "https://static8.depositphotos.com/1011976/1020/i/600/depositphotos_10209584-stock-photo-crassula.jpg",
+                  "collection":"Succulents", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat maecenas volutpat blandit aliquam etiam."
                 },
@@ -990,6 +1006,7 @@
                   "id": 17,
                   "name": "urna molestie at",
                   "image": "https://st3.depositphotos.com/32554226/33810/i/600/depositphotos_338100718-stock-photo-money-tree-home-plant-of.jpg",
+                  "collection":"Succulents", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit sed ullamcorper morbi tincidunt ornare massa eget."
                 },
@@ -997,6 +1014,7 @@
                   "id": 18,
                   "name": "eget egestas purus",
                   "image": "https://st.depositphotos.com/38417542/51407/i/600/depositphotos_514079124-stock-photo-potted-haworthia-attenuata-zebra-plant.jpg",
+                  "collection":"Succulents", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ridiculus mus mauris vitae ultricies leo."
                 },
@@ -1004,6 +1022,7 @@
                   "id": 19,
                   "name": "ante metus dictumante metus dictum",
                   "image": "https://st2.depositphotos.com/6235482/10241/i/600/depositphotos_102419938-stock-photo-tus-in-pot.jpg",
+                  "collection":"Cacti", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor purus non enim praesent elementum facilisis leo."
                 },
@@ -1011,6 +1030,7 @@
                   "id": 20,
                   "name": "euismod in pellentesque",
                   "image": "https://st.depositphotos.com/1833357/3825/i/600/depositphotos_38259909-stock-photo-christmas-cactus-isolated-on-white.jpg",
+                  "collection":"Cacti", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim sit amet venenatis urna cursus."
                 },
@@ -1018,6 +1038,7 @@
                   "id": 21,
                   "name": "",
                   "image": "https://st3.depositphotos.com/1393581/18998/i/600/depositphotos_189985052-stock-photo-indoor-plant-white-orchid-flower.jpg",
+                  "collection":"Home", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tristique senectus et netus et malesuada fames ac turpis egestas."
                 },
@@ -1025,21 +1046,71 @@
                   "id": 22,
                   "name": "scelerisque viverra mauris",
                   "image": "https://media.istockphoto.com/photos/venus-flytrap-in-a-pot-picture-id175525625?k=20&m=175525625&s=612x612&w=0&h=QbY6zg5_pC3KfcPxT6DK36aX15s-kDOHvGKeSiHUCn8=",
+                  "collection":"Carnivorous", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Morbi tempus iaculis urna id."
                 },{
                   "id": 23,
                   "name": "a diam maecenas",
                   "image": "https://media.istockphoto.com/photos/common-sundew-isolated-on-white-background-picture-id177817260?k=20&m=177817260&s=612x612&w=0&h=iZGscyP_FbV-aJNR_0f0OxtwC34-TNy0JOc6NVhkx2Q=",
+                  "collection":"Carnivorous", 
                   "price": "",
                   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vestibulum lorem sed risus ultricies tristique nulla aliquet enim."
                 },{
                   "id": 24,
                   "name": "Key Lime Tree",
                   "image": "https://www.citrus.com/wp-content/uploads/key-lime-tree-2-600x600.jpg",
+                  "collection": "Fruiting", 
                   "price": 20,
                   "description": "The Key Lime Tree is bushy and has spindling branches that has short to medium length thorns. Key Lime Trees produce small white flowers that emit a spectacular aromatic scent that can last an entire season. This lime tree fruit has an invigorating blend of acidity and sweetness that is unlike any other lime"
                 }
+        ],
+        "favorites":[
+          {
+            "id":1,
+            "name": "#950",
+            "image": "https://img.seadn.io/files/f862140a6e8cbaca770a211b6ad55871.png?auto=format&fit=max&w=640",
+            "collection": "Bored Ape Yacht Club",
+            "price": 2000,
+            "description": "Owned by MachiBigBrother"
+          },{
+            "id": 2,
+            "name": "sagittis aliquam malesuada",
+            "image": "https://st4.depositphotos.com/1785712/30902/i/600/depositphotos_309023240-stock-photo-leafy-green-ficus-guianensis-plant.jpg",
+            "collection":"Home", 
+            "price": "",
+
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus sed vulputate odio ut enim blandit volutpat maecenas volutpat."
+          },{
+            "id": 3,
+            "name": "AAUJW0170OT01GRY0002 A CHARM NECKLACE",
+            "image": "https://cdn.shopify.com/s/files/1/2138/3643/products/AXUJW0046OT01_GRY0002_1_5171f527-4b3a-4347-8e18-158fc78ae325_1024x.jpg?v=1629291590",
+            "collection": "ALYX",
+            "price": 415.00,
+            "description": "A logo charm chain necklace with palladium finishing featuring the signature metal rollercoaster buckle closure. "
+            },
+            {
+              "id": 4,
+              "name": "urna molestie at",
+              "image": "https://st3.depositphotos.com/32554226/33810/i/600/depositphotos_338100718-stock-photo-money-tree-home-plant-of.jpg",
+              "collection":"Succulents", 
+              "price": "",
+              "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit sed ullamcorper morbi tincidunt ornare massa eget."
+            },{
+              "id": 5,
+              "name": "OVERSIZED CACTUS JACK DIOR POLO SHIRT",
+              "image": "https://media.dior.com/couture/ecommerce/media/catalog/product/G/l/1656607660_283M830AT355_C189_E01_GHC.jpg?imwidth=800",
+              "collection": "Dior",
+              "price": 1650,
+              "description": "Beige and Black Cotton Jacquard and Silk"
+            },{
+              "id": 6,
+              "name": "LE MALE EAU DE TOILETTE",
+              "image": "https://www.jeanpaulgaultier.com/cdn-cgi/image/width=350,quality=90,format=webp//medias/sys_master/images/images/h24/he3/9328639180830/9328639180830.png",
+              "collection": "Jean-PG",
+              "price": 350,
+              "description": "MINT  LAVENDER  VANILLA"
+              }
         ]
     }
 
