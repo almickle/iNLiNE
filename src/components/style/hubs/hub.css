@@ -58,6 +58,12 @@
     margin: 2%;
 }
 
+.model-div {
+    width: 20%;
+    height: 60%;
+    margin: 2%;
+}
+
 .minicard-img {
     width: auto;
     max-height: 100%;
