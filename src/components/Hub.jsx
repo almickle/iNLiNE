@@ -53,7 +53,6 @@ function Hub({ infoObject }) {
             )
     })
 
-<<<<<<< HEAD
     const collectionInfo = {
         id: "collection",
         class: "nav-button",
@@ -67,13 +66,12 @@ function Hub({ infoObject }) {
         text: "Sort",
         tabs: ["Price", "Trend"]
     }
-=======
+
     const navbarButtons = buttons.map((button, index) => {
         return (<DropDown buttonInfo={button} currentIndex={index} handleNavButtonClick={() => handleNavButtonClick(index)} visibility={dropDownVisibility} key={button.id}/>)
     })
->>>>>>> c423514bed976f7b0984ad0cbf041032e246c817
 
-
+    
     return (
         <div className="hub">
             <h1 className="hub-header">{text}</h1>
