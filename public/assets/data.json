@@ -1228,7 +1228,16 @@
               "price": 350,
               "description": "MINT  LAVENDER  VANILLA"
               }
-        ]
+        ],
+        "3D":[{
+          "id": 1,
+          "name": "Arch Angel",
+          "model": "arkangel.gltf",
+          "collection": "Catabran",
+          "price": 10000,
+          "description":""
+
+    }]
     }
 
 }
