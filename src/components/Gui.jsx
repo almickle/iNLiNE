@@ -8,9 +8,9 @@ import Left from "./Left"
 import Right from "./Right"
 import Up from "./Up"
 import Down from "./Down"
-
+import CardCard from "./CardCard"
 import Hub from "./Hub"
-import UserHub from "./UserHub"
+
 
 
 // stylesheet imports
@@ -77,7 +77,7 @@ const nftStyleInfo = {
         { 
             id: "nft-B1",
             text: "Collections",
-            tabs: ["Crypto Punks", "Bored Ape", "NBA Top Shop", "Beeple"]
+            tabs: ["Crypto Punks","Bored Apes" , "Clone X", "NBA Top Shop"]
         },
         { 
             id: "nft-B2",
@@ -146,20 +146,22 @@ const plantStyleInfo = {
 }
 
 function handleUpClick() {
-    setGuiElements([<UserHub key="USH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<CardCard key="Card" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+}
+function handleHomeClick(){
+    setGuiElements([<HomeHub key="HH" onLiveShop={handleLiveShop}/> , <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick}/>])
 }
 
-
 function handleLeftClick() {
-    setGuiElements([<Hub infoObject={nftStyleInfo} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<Hub infoObject={nftStyleInfo} handleHomeClick={handleHomeClick} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />,  <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleRightClick() {
-    setGuiElements([<Hub infoObject={clothingStyleInfo} key="CH"/>, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<Hub infoObject={clothingStyleInfo} handleHomeClick={handleHomeClick} key="CH"/>, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>,  <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleDownClick() {
-    setGuiElements([<Hub infoObject={plantStyleInfo} key="PH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
+    setGuiElements([<Hub infoObject={plantStyleInfo} handleHomeClick={handleHomeClick} key="PH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>,  <Down key="DB" onDown={handleDownClick} />])
 }
 
 // function handleCardClick(clothing){

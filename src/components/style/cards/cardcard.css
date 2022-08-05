@@ -1,0 +1,20 @@
+#card-card-div{
+    width: 70%;
+    height: 62%;
+    position: absolute;
+    background-color: white;
+    border-radius: 1px;
+    border-width: 1px;
+    border-style: solid;
+    left: 15%;
+    top: 18%;
+    justify-content: center;
+}
+
+#home-button{
+    width: 15%;
+    height: 15%;
+    left: 75%;
+    position: absolute;
+    top:18%;
+}
