@@ -53,9 +53,25 @@ function Hub({ infoObject }) {
             )
     })
 
+<<<<<<< HEAD
+    const collectionInfo = {
+        id: "collection",
+        class: "nav-button",
+        text: "Collections",
+        tabs: ["ALYX", "Dior", "Catabran", "Elexia"]
+    }
+
+    const sortInfo = {
+        id: "sort",
+        class: "nav-button",
+        text: "Sort",
+        tabs: ["Price", "Trend"]
+    }
+=======
     const navbarButtons = buttons.map((button, index) => {
         return (<DropDown buttonInfo={button} currentIndex={index} handleNavButtonClick={() => handleNavButtonClick(index)} visibility={dropDownVisibility} key={button.id}/>)
     })
+>>>>>>> c423514bed976f7b0984ad0cbf041032e246c817
 
 
     return (
