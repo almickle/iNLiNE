@@ -10,12 +10,8 @@ import Up from "./Up"
 import Down from "./Down"
 import CardCard from "./CardCard"
 import Hub from "./Hub"
-<<<<<<< HEAD
 
-=======
-import UserHub from "./UserHub"
 import Card from "./Card"
->>>>>>> 1df7f9d5fb23a01ccaa9b0f74e5693aac7c124a5
 
 
 // stylesheet imports
@@ -166,7 +162,6 @@ function handleHomeClick(){
 }
 
 function handleLeftClick() {
-<<<<<<< HEAD
     setGuiElements([<Hub infoObject={nftStyleInfo} handleHomeClick={handleHomeClick} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />,  <Down key="DB" onDown={handleDownClick} />])
 }
 
@@ -176,8 +171,6 @@ function handleRightClick() {
 
 function handleDownClick() {
     setGuiElements([<Hub infoObject={plantStyleInfo} handleHomeClick={handleHomeClick} key="PH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>,  <Down key="DB" onDown={handleDownClick} />])
-=======
-    setGuiElements([<Hub infoObject={nftStyleInfo} handleCardClick={handleCardClick} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleRightClick() {
@@ -186,7 +179,6 @@ function handleRightClick() {
 
 function handleDownClick() {
     setGuiElements([<Hub infoObject={plantStyleInfo} handleCardClick={handleCardClick} key="PH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick}/>, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
->>>>>>> 1df7f9d5fb23a01ccaa9b0f74e5693aac7c124a5
 }
 
 function handleCardClick (content) {
