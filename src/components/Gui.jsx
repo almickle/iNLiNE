@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 // component imports
 import Intro from "./Intro"
@@ -12,7 +12,6 @@ import Down from "./Down"
 import Hub from "./Hub"
 import UserHub from "./UserHub"
 
-import PlantCard from "./PlantCard"
 
 // stylesheet imports
 import "./style/gui.css"
@@ -152,7 +151,7 @@ function handleUpClick() {
 
 
 function handleLeftClick() {
-    setGuiElements([<Hub infoObject={nftStyleInfo} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} onCardClick={handleCardClick} />])
+    setGuiElements([<Hub infoObject={nftStyleInfo} key="NH" />, <Left key="LB" onLeft={handleLeftClick} />, <Right key="RB" onRight={handleRightClick} />, <Up key="UB" onUp={handleUpClick} />, <Down key="DB" onDown={handleDownClick} />])
 }
 
 function handleRightClick() {
@@ -167,10 +166,10 @@ function handleDownClick() {
 //     setGuiElements([<ClothingHub key={clothing.id} clothing={clothing}/>])
 // }
 
-function handleCardClick(item){
-    console.log(item)
-    setGuiElements([<PlantCard key={item.id} plant={item}/>, <Left key="LB" onLeft={handleDownClick}/>])
-}
+// function handleCardClick(item){
+//     console.log(item)
+//     setGuiElements([<PlantCard key={item.id} plant={item}/>, <Left key="LB" onLeft={handleDownClick}/>])
+// }
 
 function handleLiveShop() {
     setGuiElements()

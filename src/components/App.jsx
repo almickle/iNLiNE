@@ -98,7 +98,7 @@ function runCameraPath(scene) {
   
 }
 
-//runCameraPath(scene)
+runCameraPath(scene)
 
   
   // Load and position mesh // issue**
