@@ -12,7 +12,11 @@ import DropDown from "./DropDown";
 
 
 // component function
+<<<<<<< HEAD
+function Hub({ infoObject, handleHomeClick }) {
+=======
 function Hub({ infoObject, handleCardClick }) {
+>>>>>>> 1df7f9d5fb23a01ccaa9b0f74e5693aac7c124a5
 
     const { hub, imgdivID, imageID, spanID, divID, navbarID, text, buttons } = infoObject
     
@@ -48,8 +52,12 @@ function Hub({ infoObject, handleCardClick }) {
             return false
         }))
     }
+<<<<<<< HEAD
+    
+=======
 
 
+>>>>>>> 1df7f9d5fb23a01ccaa9b0f74e5693aac7c124a5
     const contentElements = content.map((item) => {   
         return(
             <div key={item.id} id={imgdivID} className="mincard-div">
@@ -58,6 +66,10 @@ function Hub({ infoObject, handleCardClick }) {
             )
     })
 
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 1df7f9d5fb23a01ccaa9b0f74e5693aac7c124a5
 
     const navbarButtons = buttons.map((button, index) => {
         return (<DropDown buttonInfo={button} currentIndex={index} handleNavButtonClick={() => handleNavButtonClick(index)} visibility={dropDownVisibility} key={button.id}/>)
@@ -66,7 +78,7 @@ function Hub({ infoObject, handleCardClick }) {
 
     return (
         <div className="hub">
-            <h1 className="hub-header">{text}</h1>
+            <h1 className="hub-header" onClick={handleHomeClick}>{text}</h1>
             <span id={spanID} className="hub-span"></span>
             <div id={navbarID} className="navbar">
                 {navbarButtons}
