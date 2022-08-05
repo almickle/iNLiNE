@@ -23,7 +23,7 @@ export default ({onLiveShop}) => {
         fetch("http://localhost:3000/hubinfo")
         .then(resp => resp.json())
         .then(data => {
-            setFavorites(data.clothing)})
+            setFavorites(data.favorites)})
     }, [])
 
     const iconElements = favorites.map((element) => {
