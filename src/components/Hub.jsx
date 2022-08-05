@@ -100,7 +100,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
         scene.clearColor = new Color3(1, 1, 1)
 
         const canvas = scene.getEngine().getRenderingCanvas();
-        const camera = new ArcRotateCamera("modelcamera", 1, 0, 1.2, new Vector3(0, 1, 0), scene);
+        const camera = new ArcRotateCamera("modelcamera", 1, 0, 1.5, new Vector3(0, 0, 0), scene);
               camera.panningAxis = new Vector3(1, 0, 0)
               camera.attachControl(canvas, true);
 
