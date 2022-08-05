@@ -51,3 +51,21 @@
 }
 
 .add-to-cart:hover {opacity: 75%;}
+
+.card-collection {
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: "CoreCircus", sans-serif;
+}
+
+.card-description {
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: "CoreCircus", sans-serif;
+}
+
+.card-price {
+    margin-left: 5%;
+    margin-top: 5%;
+    font-family: "CoreCircus", sans-serif;
+}

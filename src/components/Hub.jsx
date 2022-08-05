@@ -117,7 +117,7 @@ function Hub({ infoObject, handleCardClick, handleHomeClick }) {
 
 
     return (
-        <div className="hub">
+        <div id={hub} className="hub">
             <h1 className="hub-header" onClick={handleHomeClick}>{text}</h1>
             <span id={spanID} className="hub-span"></span>
             <div id={navbarID} className="navbar">

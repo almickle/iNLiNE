@@ -5,18 +5,17 @@
             {
                 "id": 1,
           "name": "Dior-Converse",
-          "image": "https://media.dior.com/img/en_us/sku/couture/2ESCA338SOT_H03E_TU?imwidth=460",
+          "image": "https://media.dior.com/img/en_us/sku/couture/3SH126ZOI_H961_T48?imwidth=460",
           "collection": "Dior",
           "price": 1200.00
             },
             {
                 "id": 2,
           "name": "CACTUS JACK DIOR SADDLE BAG",
-          "image": "https://media.dior.com/img/en_us/sku/couture/3SH126ZOI_H961_T48?imwidth=460",
+          "image": "https://media.dior.com/img/en_us/sku/couture/2ESCA338SOT_H03E_TU?imwidth=460",
           "collection": "Dior",
           "price": 3800.00,
           "description": "Black Grained Calfskin with Embroidered Signature."
-          
             },
             {
                 "id": 3,
